@@ -7,8 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.ConexionBD;
-import vista.VisualizarProductos;
-import 
+import tianquiztliejem.Conexion;
+//import vista.VisualizarProductos;
+import vista.Productos.VisualizarProductos;
 
 public class ProductoDAO {
     

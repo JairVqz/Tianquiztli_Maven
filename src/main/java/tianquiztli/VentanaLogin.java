@@ -167,6 +167,11 @@ public class VentanaLogin extends javax.swing.JFrame {
                    JOptionPane.showMessageDialog(null,"Datos incorrectos");  
                 }
             }
+                ps=con.prepareStatement("select * from repartidor where nombreR='"+usuario+"' and contraseñaR='"+contraseña+"'");
+                rs=ps.executeQuery();
+            if(rs.next()){
+                
+            }
             
             
         }catch (HeadlessException | SQLException e){
