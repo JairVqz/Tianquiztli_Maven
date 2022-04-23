@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.ConexionBD;
-import tianquiztliejem.Conexion;
 //import vista.VisualizarProductos;
 import vista.Productos.VisualizarProductos;
 
@@ -17,7 +16,7 @@ public class ProductoDAO {
         
         
         ArrayList<Productos> list = new ArrayList<Productos>();
-        Conexion conec = new Conexion();
+        ConexionBD conec = new ConexionBD();
         String sql = "SELECT * FROM productosP;";
         ResultSet rs = null;
         PreparedStatement ps = null;
@@ -53,7 +52,7 @@ public class ProductoDAO {
         
         
         ArrayList<Productos> list = new ArrayList<Productos>();
-        Conexion conec = new Conexion();
+        ConexionBD conec = new ConexionBD();
         String sql = "SELECT * FROM `productosP` WHERE `tipo`=\"Artesanía\"";
         ResultSet rs = null;
         PreparedStatement ps = null;
@@ -89,7 +88,7 @@ public class ProductoDAO {
         
         
         ArrayList<Productos> list = new ArrayList<Productos>();
-        Conexion conec = new Conexion();
+        ConexionBD conec = new ConexionBD();
         String sql = "SELECT * FROM `productosP` WHERE `tipo`=\"Accesorios\"";
         ResultSet rs = null;
         PreparedStatement ps = null;
@@ -125,7 +124,7 @@ public class ProductoDAO {
         
         
         ArrayList<Productos> list = new ArrayList<Productos>();
-        Conexion conec = new Conexion();
+        ConexionBD conec = new ConexionBD();
         String sql = "SELECT * FROM `productosP` WHERE `tipo`=\"Comida\"";
         ResultSet rs = null;
         PreparedStatement ps = null;
@@ -161,7 +160,7 @@ public class ProductoDAO {
         
         
         ArrayList<Productos> list = new ArrayList<Productos>();
-        Conexion conec = new Conexion();
+        ConexionBD conec = new ConexionBD();
         String sql = "SELECT * FROM `productosP` WHERE `tipo`=\"Bebidas\"";
         ResultSet rs = null;
         PreparedStatement ps = null;

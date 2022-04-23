@@ -57,10 +57,10 @@ public class ControladorP {
                 fila[5] = vo.getCantidad();
                 try{
                     byte[] bi = vo.getImagen();
-                    BufferedImage image = null;
+                    BufferedImage img = null;
                     InputStream in = new ByteArrayInputStream(bi);
-                    image = ImageIO.read(in);
-                    ImageIcon imgi = new ImageIcon(image.getScaledInstance(60, 60, 0));
+                    img = ImageIO.read(in);
+                    ImageIcon imgi = new ImageIcon(img);
                     fila[6] = new JLabel(imgi);
 
                 }catch(Exception ex){

@@ -1,6 +1,7 @@
 
 package vista.Productos;
 
+import modelo.ConexionBD;
 //import ProductoV.modelo.ProductoDAO;
 import modelo.VisualizarProducto.*;
 import java.awt.Image;
@@ -12,7 +13,6 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import tianquiztliejem.Conexion;
 //import ProductoV.controlador.ControladorP;
 import controlador.Productos.ControladorP;
 import vista.Productos.*;
@@ -27,7 +27,7 @@ public class VisualizarProductos extends javax.swing.JFrame {
     private ImageIcon imagen, ima;
     private Icon icono;
     int codigo = 0;
-    Conexion c ;
+    ConexionBD c ;
     ProductoDAO dao;
     ControladorP t = new ControladorP();
     

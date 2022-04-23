@@ -8,6 +8,7 @@ package tianquiztli;
 import controlador.Productos.ControladorPantallaRegistrarProductos;
 import modelo.Productos.Productos_DAO;
 import vista.Productos.PantallaRegistrarProductos;
+import vista.Productos.VisualizarProductos;
 
 /**
  *
@@ -17,10 +18,13 @@ public class Tianquiztli {
     
     public static void main(String[] args) {
 
-        VentanaLogin log = new VentanaLogin();
+        VisualizarProductos vp = new VisualizarProductos();
+        vp.setVisible(true);
+        vp.setLocationRelativeTo(null);
+        /*VentanaLogin log = new VentanaLogin();
         log.setVisible(true);
         
-        /*PantallaRegistrarProductos pantallaRegistro = new PantallaRegistrarProductos();
+        PantallaRegistrarProductos pantallaRegistro = new PantallaRegistrarProductos();
         Productos_DAO producto_dao = new Productos_DAO();
         ControladorPantallaRegistrarProductos rpc = new ControladorPantallaRegistrarProductos(producto_dao, pantallaRegistro);
         //
