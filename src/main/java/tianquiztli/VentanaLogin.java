@@ -1,11 +1,13 @@
 package tianquiztli;
 
+import controlador.Productos.ControladorP;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import vista.Productos.VisualizarProductos;
 
 public class VentanaLogin extends javax.swing.JFrame {
     
@@ -156,7 +158,13 @@ public class VentanaLogin extends javax.swing.JFrame {
             rs=ps.executeQuery();
             
             if(rs.next()){
-
+               VisualizarProductos vp = new VisualizarProductos();
+               
+               ControladorP cpz = new ControladorP(vp);
+               this.setVisible(false);
+               vp.setVisible(true);
+               vp.setLocationRelativeTo(null);
+               
             }else{
                 ps=con.prepareStatement("select * from vendedor where nombre='"+usuario+"' and contraseña='"+contraseña+"'");
                 rs=ps.executeQuery();

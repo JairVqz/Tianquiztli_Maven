@@ -11,8 +11,18 @@ import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modelo.*;
+import vista.Productos.VisualizarProductos;
 public class ControladorP {
      ProductoDAO dao = null;
+     VisualizarProductos vp;
+
+    public ControladorP(VisualizarProductos vp) {
+        this.vp = vp;
+    }
+
+    public ControladorP() {
+    }
+     
      
      public void visualizar_ProductoVO(JTable tabla){
         

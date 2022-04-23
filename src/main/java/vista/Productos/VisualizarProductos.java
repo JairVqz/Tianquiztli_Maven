@@ -35,8 +35,8 @@ public class VisualizarProductos extends javax.swing.JFrame {
     public VisualizarProductos() {
         initComponents();
         this.setLocationRelativeTo(this);
-        this.logoImagen(this.logo, "src/imagenes/logo.png");
-        this.logoImagen(this.titulo, "src/imagenes/titulo.png");
+        this.logoImagen(this.logo, "src/main/java/Imagenes/logo.png");
+        this.logoImagen(this.titulo, "src/main/java/Imagenes/titulo.png");
         
         t.visualizar_ProductoVO(tabla);
         
