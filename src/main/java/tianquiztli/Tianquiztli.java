@@ -23,7 +23,7 @@ public class Tianquiztli {
         /*PantallaRegistrarProductos pantallaRegistro = new PantallaRegistrarProductos();
         Productos_DAO producto_dao = new Productos_DAO();
         ControladorPantallaRegistrarProductos rpc = new ControladorPantallaRegistrarProductos(producto_dao, pantallaRegistro);
-    
+        //
         pantallaRegistro.setTitle("Tianquiztli");
         pantallaRegistro.setLocationRelativeTo(null);
 
