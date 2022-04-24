@@ -1,6 +1,7 @@
 package tianquiztli;
 
 import controlador.Productos.ControladorP;
+import controlador.PedidoR.TablaPedidoR;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import vista.Productos.VisualizarProductos;
+import vista.Repartidor.VisualizarPedidoR;
 
 public class VentanaLogin extends javax.swing.JFrame {
     
@@ -178,7 +180,12 @@ public class VentanaLogin extends javax.swing.JFrame {
                 ps=con.prepareStatement("select * from repartidor where nombreR='"+usuario+"' and contraseñaR='"+contraseña+"'");
                 rs=ps.executeQuery();
             if(rs.next()){
-                
+                VisualizarPedidoR vpr = new VisualizarPedidoR();
+               
+               TablaPedidoR tp = new TablaPedidoR(vpr);
+               this.setVisible(false);
+               vpr.setVisible(true);
+               vpr.setLocationRelativeTo(null);
             }
             
             
