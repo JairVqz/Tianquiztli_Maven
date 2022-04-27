@@ -238,6 +238,7 @@ public class ControladorP {
                 return false;
             }
         };
+        
         dt.addColumn("ID");
         dt.addColumn("NOMBRE");
         dt.addColumn("TIPO");

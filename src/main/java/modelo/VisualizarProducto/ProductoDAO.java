@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import modelo.ConexionBD;
 //import vista.VisualizarProductos;
 import vista.Productos.VisualizarProductos;
@@ -17,7 +18,7 @@ public class ProductoDAO {
         
         ArrayList<Productos> list = new ArrayList<Productos>();
         ConexionBD conec = new ConexionBD();
-        String sql = "SELECT * FROM productosP;";
+        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, cantidad, foto FROM `productos` WHERE 1;";
         ResultSet rs = null;
         PreparedStatement ps = null;
         
@@ -53,7 +54,7 @@ public class ProductoDAO {
         
         ArrayList<Productos> list = new ArrayList<Productos>();
         ConexionBD conec = new ConexionBD();
-        String sql = "SELECT * FROM `productosP` WHERE `tipo`=\"Artesanía\"";
+        String sql = "SELECT * FROM 'productos' WHERE `tipo`=\"Artesanía\"";
         ResultSet rs = null;
         PreparedStatement ps = null;
         
@@ -89,7 +90,7 @@ public class ProductoDAO {
         
         ArrayList<Productos> list = new ArrayList<Productos>();
         ConexionBD conec = new ConexionBD();
-        String sql = "SELECT * FROM `productosP` WHERE `tipo`=\"Accesorios\"";
+        String sql = "SELECT * FROM 'productos' WHERE `tipo`=\"Accesorios\"";
         ResultSet rs = null;
         PreparedStatement ps = null;
         
@@ -125,7 +126,7 @@ public class ProductoDAO {
         
         ArrayList<Productos> list = new ArrayList<Productos>();
         ConexionBD conec = new ConexionBD();
-        String sql = "SELECT * FROM `productosP` WHERE `tipo`=\"Comida\"";
+        String sql = "SELECT * FROM 'productos' WHERE `tipo`=\"Comida\"";
         ResultSet rs = null;
         PreparedStatement ps = null;
         
@@ -161,7 +162,7 @@ public class ProductoDAO {
         
         ArrayList<Productos> list = new ArrayList<Productos>();
         ConexionBD conec = new ConexionBD();
-        String sql = "SELECT * FROM `productosP` WHERE `tipo`=\"Bebidas\"";
+        String sql = "SELECT * FROM 'productos' WHERE `tipo`=\"Bebidas\"";
         ResultSet rs = null;
         PreparedStatement ps = null;
         
@@ -191,6 +192,63 @@ public class ProductoDAO {
         }
         return list;
     }
+    
+    public void Modificar_ProductoVO2(modelo.VisualizarProducto.Productos vo){
+        ConexionBD conec = new ConexionBD();
+        String sql = "UPDATE productos SET nombre = ?, tipo = ?, descripcion = ?, precio = ?, cantidad = ?\n" +
+"WHERE idP = ?;";
+        PreparedStatement ps = null;
+        try{
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setString(1, vo.getNombre());
+            ps.setString(2, vo.getTipo());
+            ps.setString(3, vo.getDescripcion());
+            ps.setInt(4, vo.getPrecio());
+            ps.setInt(5, vo.getCantidad());
+            ps.setInt(6, vo.getId());
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "El Producto ha sido registrado", "Operación exitosa ", JOptionPane.INFORMATION_MESSAGE);
+        }catch(SQLException ex){
+            System.out.println("A "+ex.getMessage());
+        }catch(Exception ex){
+            System.out.println("B "+ex.getMessage());
+            JOptionPane.showMessageDialog(null, "El sistema perdío conexión con la Base de Datos, Por favor intente nuevamente", "Error", JOptionPane.ERROR_MESSAGE);
+        }finally{
+            try{
+                ps.close();
+            }catch(Exception ex){}
+        }
+    }
+    
+    public void Modificar_ProductoVO(modelo.VisualizarProducto.Productos vo){
+        ConexionBD conec = new ConexionBD();
+        String sql = "UPDATE productos SET nombre = ?, tipo = ?, descripcion = ?, precio = ?, cantidad = ?, foto = ?\n" +
+"WHERE idP = ?;";
+        PreparedStatement ps = null;
+ 
+        try{
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setString(1, vo.getNombre());
+            ps.setString(2, vo.getTipo());
+            ps.setString(3, vo.getDescripcion());
+            ps.setInt(4, vo.getPrecio());
+            ps.setInt(5, vo.getCantidad());
+            ps.setBytes(6, vo.getImagen());
+            ps.setInt(7, vo.getId());
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "El Producto ha sido registrado", "Operación exitosa ", JOptionPane.INFORMATION_MESSAGE);
+        }catch(SQLException ex){
+            System.out.println("A "+ex.getMessage());
+        }catch(Exception ex){
+            System.out.println("B "+ex.getMessage());
+            JOptionPane.showMessageDialog(null, "El sistema perdío conexión con la Base de Datos, Por favor intente nuevamente", "Error", JOptionPane.ERROR_MESSAGE);
+        }finally{
+            try{
+                ps.close();
+            }catch(Exception ex){}
+        }
+    }
+
     
 }
 
