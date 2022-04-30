@@ -54,7 +54,7 @@ public class ProductoDAO {
         
         ArrayList<Productos> list = new ArrayList<Productos>();
         ConexionBD conec = new ConexionBD();
-        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, cantidad, foto `productos` WHERE `tipo`=\"Artesanía\"";
+        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, stock, foto FROM `productos` WHERE `tipo`=\"Artesanía\"";
         ResultSet rs = null;
         PreparedStatement ps = null;
         
@@ -90,7 +90,7 @@ public class ProductoDAO {
         
         ArrayList<Productos> list = new ArrayList<Productos>();
         ConexionBD conec = new ConexionBD();
-        String sql = "SELECT * FROM 'productos' WHERE `tipo`=\"Accesorios\"";
+        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, stock, foto FROM `productos` WHERE `tipo`=\"Accesorio\"";
         ResultSet rs = null;
         PreparedStatement ps = null;
         
@@ -126,7 +126,7 @@ public class ProductoDAO {
         
         ArrayList<Productos> list = new ArrayList<Productos>();
         ConexionBD conec = new ConexionBD();
-        String sql = "SELECT * FROM 'productos' WHERE `tipo`=\"Comida\"";
+        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, stock, foto FROM `productos` WHERE `tipo`=\"Comida\"";
         ResultSet rs = null;
         PreparedStatement ps = null;
         
@@ -162,7 +162,7 @@ public class ProductoDAO {
         
         ArrayList<Productos> list = new ArrayList<Productos>();
         ConexionBD conec = new ConexionBD();
-        String sql = "SELECT * FROM 'productos' WHERE `tipo`=\"Bebidas\"";
+        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, stock, foto FROM `productos` WHERE `tipo`=\"Bebida\"";
         ResultSet rs = null;
         PreparedStatement ps = null;
         

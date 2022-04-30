@@ -17,7 +17,7 @@ public class Productos_DAO{
 
     public void agregarProducto(Productos producto) {
         ConexionBD c = new ConexionBD();
-        String sql = "INSERT INTO productos (id_P, id_V, nombre, tipo, descripcion, precio, cantidad, foto)\n" +
+        String sql = "INSERT INTO productos (id_P, id_V, nombre, tipo, descripcion, precio, stock, foto)\n" +
 "VALUES (NULL,?,?,?,?,?,?,?);";
         PreparedStatement ps = null;
         try{
@@ -27,7 +27,7 @@ public class Productos_DAO{
             ps.setString(3, producto.getTipo());
             ps.setString(4, producto.getDescripcion());
             ps.setInt(5, producto.getPrecio());
-            ps.setInt(6, producto.getCantidad());
+            ps.setString(6, producto.getStock());
             ps.setBytes(7, producto.getFoto());
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null, "El Producto ha sido registrado", "Operación exitosa ", JOptionPane.INFORMATION_MESSAGE);

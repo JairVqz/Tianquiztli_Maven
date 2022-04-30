@@ -3,6 +3,7 @@ package modelo.VisualizarProducto;
 public class Productos {
     
     public int id ;
+    public int idV;
     public String nombre;
     public String descripcion;
     public String tipo;
@@ -30,6 +31,14 @@ public class Productos {
 
     public void setId(int id) {
         this.id = id;
+    }
+    
+    public int getIdV() {
+        return id;
+    }
+
+    public void setIdV(int idV) {
+        this.idV = idV;
     }
 
     public String getNombre() {

@@ -17,7 +17,7 @@ public class Productos {
     String tipo;
     String descripcion;
     int precio;
-    int cantidad;
+    String stock;
     private byte[] foto;
     
     public Productos(){}
@@ -41,8 +41,8 @@ public class Productos {
     public int getPrecio(){
         return precio;
     }
-    public int getCantidad(){
-        return cantidad;
+    public String getStock(){
+        return stock;
     }
 
 
@@ -65,8 +65,8 @@ public class Productos {
     public void setPrecio(int precio){
         this.precio = precio;
     }
-    public void setCantidad(int cantidad){
-        this.cantidad = cantidad;
+    public void setStock(String stock){
+        this.stock = stock;
     }
 
     /**

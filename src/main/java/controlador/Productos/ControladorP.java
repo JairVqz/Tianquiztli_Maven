@@ -90,7 +90,7 @@ public class ControladorP {
         dt.addColumn("TIPO");
         dt.addColumn("DESCRIPCION");
         dt.addColumn("PRECIO");
-        dt.addColumn("CANTIDAD");
+        dt.addColumn("STOCK");
         dt.addColumn("IMAGEN");
 
         dao = new ProductoDAO();
@@ -142,7 +142,7 @@ public class ControladorP {
         dt.addColumn("TIPO");
         dt.addColumn("DESCRIPCION");
         dt.addColumn("PRECIO");
-        dt.addColumn("CANTIDAD");
+        dt.addColumn("STOCK");
         dt.addColumn("IMAGEN");
 
         dao = new ProductoDAO();
@@ -193,7 +193,7 @@ public class ControladorP {
         dt.addColumn("TIPO");
         dt.addColumn("DESCRIPCION");
         dt.addColumn("PRECIO");
-        dt.addColumn("CANTIDAD");
+        dt.addColumn("STOCK");
         dt.addColumn("IMAGEN");
 
         dao = new ProductoDAO();
@@ -244,7 +244,7 @@ public class ControladorP {
         dt.addColumn("TIPO");
         dt.addColumn("DESCRIPCION");
         dt.addColumn("PRECIO");
-        dt.addColumn("CANTIDAD");
+        dt.addColumn("STOCK");
         dt.addColumn("IMAGEN");
 
         dao = new ProductoDAO();

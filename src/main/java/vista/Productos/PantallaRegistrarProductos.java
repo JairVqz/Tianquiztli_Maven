@@ -8,13 +8,17 @@ import controlador.Productos.ControladorPantallaRegistrarProductos;
 import javax.swing.JFileChooser;
 import javax.swing.WindowConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import modelo.Productos.Productos_DAO;
 
 /**
  *
  * @author jair1
  */
 public class PantallaRegistrarProductos extends javax.swing.JFrame {
-
+    
+    Productos_DAO producto_dao = new Productos_DAO();
+    ControladorPantallaRegistrarProductos cprp = new ControladorPantallaRegistrarProductos(producto_dao,this);
+    
     /**
      * Creates new form PantallaRegistrarProducto
      */
@@ -47,7 +51,6 @@ public class PantallaRegistrarProductos extends javax.swing.JFrame {
         tipoProducto = new javax.swing.JComboBox<>();
         txtPrecio = new javax.swing.JTextField();
         txtDescripcion = new javax.swing.JTextField();
-        txtCantidad = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtRuta = new javax.swing.JTextField();
@@ -55,10 +58,11 @@ public class PantallaRegistrarProductos extends javax.swing.JFrame {
         txtId_V = new javax.swing.JTextField();
         btnLimpiar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        stockProducto = new javax.swing.JComboBox<>();
 
         jLabel1.setText("jLabel1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 204));
 
@@ -83,7 +87,7 @@ public class PantallaRegistrarProductos extends javax.swing.JFrame {
         jLabel9.setText("Precio");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 3, 20)); // NOI18N
-        jLabel10.setText("Cantidad");
+        jLabel10.setText("Stock");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 3, 20)); // NOI18N
         jLabel11.setText("Imagén");
@@ -165,6 +169,8 @@ public class PantallaRegistrarProductos extends javax.swing.JFrame {
             }
         });
 
+        stockProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Agotado", "Disponible" }));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -180,10 +186,6 @@ public class PantallaRegistrarProductos extends javax.swing.JFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(181, 181, 181)
-                        .addComponent(tipoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -198,7 +200,6 @@ public class PantallaRegistrarProductos extends javax.swing.JFrame {
                                     .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtDescripcion, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtPrecio, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCantidad, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                         .addComponent(btnAgregarFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(31, 31, 31)
@@ -206,9 +207,17 @@ public class PantallaRegistrarProductos extends javax.swing.JFrame {
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(btnCancelar)
                                         .addGap(73, 73, 73)
-                                        .addComponent(btnGuardar)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                        .addGap(143, 143, 143))))
+                                        .addComponent(btnGuardar)))))
+                        .addGap(143, 143, 143))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(181, 181, 181)
+                                .addComponent(tipoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(200, 200, 200)
+                                .addComponent(stockProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,10 +251,10 @@ public class PantallaRegistrarProductos extends javax.swing.JFrame {
                                 .addGap(37, 37, 37)
                                 .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel9))
-                        .addGap(40, 40, 40)
-                        .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(5, 5, 5))
-                    .addComponent(jLabel10))
+                        .addGap(74, 74, 74))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel10)
+                        .addComponent(stockProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(53, 53, 53)
@@ -254,7 +263,6 @@ public class PantallaRegistrarProductos extends javax.swing.JFrame {
                         .addGap(41, 41, 41)
                         .addComponent(btnAgregarFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel11)
                         .addGap(13, 13, 13)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
@@ -321,6 +329,7 @@ public class PantallaRegistrarProductos extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
+        cprp.recibirDatos();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void txtRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRutaActionPerformed
@@ -344,7 +353,7 @@ public class PantallaRegistrarProductos extends javax.swing.JFrame {
         txtNombre.setText("");
         txtDescripcion.setText("");
         txtPrecio.setText("");
-        txtCantidad.setText("");
+        //txtCantidad.setText("");
         txtRuta.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
@@ -417,8 +426,8 @@ public class PantallaRegistrarProductos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    public javax.swing.JComboBox<String> stockProducto;
     public javax.swing.JComboBox<String> tipoProducto;
-    public javax.swing.JTextField txtCantidad;
     public javax.swing.JTextField txtDescripcion;
     public javax.swing.JTextField txtId_V;
     public javax.swing.JTextField txtNombre;
