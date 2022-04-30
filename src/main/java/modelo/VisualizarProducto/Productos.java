@@ -7,14 +7,14 @@ public class Productos {
     public String descripcion;
     public String tipo;
     public int precio;
-    public int cantidad;
+    public String cantidad;
     public byte[] imagen;
     
     public Productos(){
         
     }
 
-    public Productos(int id, String nombre, String descripcion, String tipo, int precio, int cantidad, byte[] imagen) {
+    public Productos(int id, String nombre, String descripcion, String tipo, int precio, String cantidad, byte[] imagen) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -64,11 +64,11 @@ public class Productos {
         this.precio = precio;
     }
 
-    public int getCantidad() {
+    public String getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(int cantidad) {
+    public void setCantidad(String cantidad) {
         this.cantidad = cantidad;
     }
 

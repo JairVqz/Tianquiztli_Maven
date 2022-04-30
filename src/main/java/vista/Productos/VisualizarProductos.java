@@ -94,7 +94,7 @@ public class VisualizarProductos extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "NOMBRE", "TIPO", "DESCRIPCION", "PRECIO", "CANTIDAD"
+                "ID", "NOMBRE", "TIPO", "DESCRIPCION", "PRECIO", "STOCK"
             }
         ));
         tabla.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -137,7 +137,7 @@ public class VisualizarProductos extends javax.swing.JFrame {
         costo.setText("PRECIO: $");
 
         cantidad.setFont(new java.awt.Font("Heiti TC", 0, 14)); // NOI18N
-        cantidad.setText("CANTIDAD:");
+        cantidad.setText("STOCK:");
 
         ta1.setColumns(20);
         ta1.setRows(5);

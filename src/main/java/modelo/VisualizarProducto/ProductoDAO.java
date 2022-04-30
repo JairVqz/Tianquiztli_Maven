@@ -18,7 +18,7 @@ public class ProductoDAO {
         
         ArrayList<Productos> list = new ArrayList<Productos>();
         ConexionBD conec = new ConexionBD();
-        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, cantidad, foto FROM `productos` WHERE 1;";
+        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, stock, foto FROM `productos`;";
         ResultSet rs = null;
         PreparedStatement ps = null;
         
@@ -32,7 +32,7 @@ public class ProductoDAO {
                 vo.setTipo(rs.getString(3));
                 vo.setDescripcion(rs.getString(4));
                 vo.setPrecio(rs.getInt(5));
-                vo.setCantidad(rs.getInt(6));
+                vo.setCantidad(rs.getString(6));
                 vo.setImagen(rs.getBytes(7));
                 list.add(vo);
             }
@@ -54,7 +54,7 @@ public class ProductoDAO {
         
         ArrayList<Productos> list = new ArrayList<Productos>();
         ConexionBD conec = new ConexionBD();
-        String sql = "SELECT * FROM 'productos' WHERE `tipo`=\"Artesanía\"";
+        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, cantidad, foto `productos` WHERE `tipo`=\"Artesanía\"";
         ResultSet rs = null;
         PreparedStatement ps = null;
         
@@ -68,7 +68,7 @@ public class ProductoDAO {
                 vo.setTipo(rs.getString(3));
                 vo.setDescripcion(rs.getString(4));
                 vo.setPrecio(rs.getInt(5));
-                vo.setCantidad(rs.getInt(6));
+                vo.setCantidad(rs.getString(6));
                 vo.setImagen(rs.getBytes(7));
                 list.add(vo);
             }
@@ -104,7 +104,7 @@ public class ProductoDAO {
                 vo.setTipo(rs.getString(3));
                 vo.setDescripcion(rs.getString(4));
                 vo.setPrecio(rs.getInt(5));
-                vo.setCantidad(rs.getInt(6));
+                vo.setCantidad(rs.getString(6));
                 vo.setImagen(rs.getBytes(7));
                 list.add(vo);
             }
@@ -140,7 +140,7 @@ public class ProductoDAO {
                 vo.setTipo(rs.getString(3));
                 vo.setDescripcion(rs.getString(4));
                 vo.setPrecio(rs.getInt(5));
-                vo.setCantidad(rs.getInt(6));
+                vo.setCantidad(rs.getString(6));
                 vo.setImagen(rs.getBytes(7));
                 list.add(vo);
             }
@@ -176,7 +176,7 @@ public class ProductoDAO {
                 vo.setTipo(rs.getString(3));
                 vo.setDescripcion(rs.getString(4));
                 vo.setPrecio(rs.getInt(5));
-                vo.setCantidad(rs.getInt(6));
+                vo.setCantidad(rs.getString(6));
                 vo.setImagen(rs.getBytes(7));
                 list.add(vo);
             }
@@ -195,19 +195,31 @@ public class ProductoDAO {
     
     public void Modificar_ProductoVO2(modelo.VisualizarProducto.Productos vo){
         ConexionBD conec = new ConexionBD();
-        String sql = "UPDATE productos SET nombre = ?, tipo = ?, descripcion = ?, precio = ?, cantidad = ?\n" +
-"WHERE idP = ?;";
+        String sql = "UPDATE productos SET nombre = ?, tipo = ?, descripcion = ?, precio = ?, stock = ?\n" +
+"WHERE id_P = ?;";
         PreparedStatement ps = null;
         try{
-            ps = conec.getConnection().prepareStatement(sql);
+            int input = JOptionPane.showConfirmDialog(null, 
+                "Se modificará el producto, ¿Está seguro?", "Selecciona una opción.",JOptionPane.YES_NO_CANCEL_OPTION);
+            
+            if(input==0){
+                ps = conec.getConnection().prepareStatement(sql);
             ps.setString(1, vo.getNombre());
             ps.setString(2, vo.getTipo());
             ps.setString(3, vo.getDescripcion());
             ps.setInt(4, vo.getPrecio());
-            ps.setInt(5, vo.getCantidad());
+            ps.setString(5, vo.getCantidad());
             ps.setInt(6, vo.getId());
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "El Producto ha sido registrado", "Operación exitosa ", JOptionPane.INFORMATION_MESSAGE);
+           JOptionPane.showMessageDialog(null, "El Producto ha sido modificado", "Operación exitosa ", JOptionPane.INFORMATION_MESSAGE);
+            }else{
+                System.out.println(input);
+            JOptionPane.showMessageDialog(null, "Operación cancelada", "No se realizará ninguna edición", JOptionPane.INFORMATION_MESSAGE);
+            }
+            
+        // 0=ok
+
+            //JOptionPane.showMessageDialog(null, "El Producto ha sido actualizado", "Operación exitosa ", JOptionPane.INFORMATION_MESSAGE);
         }catch(SQLException ex){
             System.out.println("A "+ex.getMessage());
         }catch(Exception ex){
@@ -222,21 +234,55 @@ public class ProductoDAO {
     
     public void Modificar_ProductoVO(modelo.VisualizarProducto.Productos vo){
         ConexionBD conec = new ConexionBD();
-        String sql = "UPDATE productos SET nombre = ?, tipo = ?, descripcion = ?, precio = ?, cantidad = ?, foto = ?\n" +
-"WHERE idP = ?;";
+        String sql = "UPDATE productos SET nombre = ?, tipo = ?, descripcion = ?, precio = ?, stock = ?, foto = ?\n" +
+"WHERE id_P = ?;";
         PreparedStatement ps = null;
  
         try{
-            ps = conec.getConnection().prepareStatement(sql);
+            int input = JOptionPane.showConfirmDialog(null, 
+                "Se modificará la imágen, ¿Está seguro?", "Selecciona una opción.",JOptionPane.YES_NO_CANCEL_OPTION);
+            
+            if (input == 0){
+                ps = conec.getConnection().prepareStatement(sql);
             ps.setString(1, vo.getNombre());
             ps.setString(2, vo.getTipo());
             ps.setString(3, vo.getDescripcion());
             ps.setInt(4, vo.getPrecio());
-            ps.setInt(5, vo.getCantidad());
+            ps.setString(5, vo.getCantidad());
             ps.setBytes(6, vo.getImagen());
             ps.setInt(7, vo.getId());
             ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "El Producto ha sido registrado", "Operación exitosa ", JOptionPane.INFORMATION_MESSAGE);
+            System.out.println(input);
+            JOptionPane.showMessageDialog(null, "La imagen ha sido modificada", "Operación exitosa ", JOptionPane.INFORMATION_MESSAGE);
+                
+            }else{
+                System.out.println(input);
+            JOptionPane.showMessageDialog(null, "Operación cancelada", "No se realizará ninguna edición", JOptionPane.INFORMATION_MESSAGE);
+            }
+               
+
+	// 0=yes, 1=no, 2=cancel
+	
+        }catch(SQLException ex){
+            System.out.println("A "+ex.getMessage());
+        }catch(Exception ex){
+            System.out.println("B "+ex.getMessage());
+            JOptionPane.showMessageDialog(null, "El sistema perdío conexión con la Base de Datos, Por favor intente nuevamente", "Error", JOptionPane.ERROR_MESSAGE);
+        }finally{
+            try{
+                ps.close();
+            }catch(Exception ex){}
+        }
+    }
+    
+    public void Eliminar_ProductoVO(Productos vo){
+        ConexionBD conec = new ConexionBD();
+        String sql = "DELETE FROM productos WHERE id_P = ?;";
+        PreparedStatement ps = null;
+        try{
+            ps = conec.getConnection().prepareStatement(sql);
+            ps.setInt(1, vo.getId());
+            ps.executeUpdate();
         }catch(SQLException ex){
             System.out.println("A "+ex.getMessage());
         }catch(Exception ex){
