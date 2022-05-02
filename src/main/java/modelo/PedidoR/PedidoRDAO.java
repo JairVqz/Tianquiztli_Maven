@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -38,13 +39,13 @@ public class PedidoRDAO {
                 list.add(vo);
             }
         }catch(SQLException ex){
-            System.out.println(ex.getMessage());
+            System.out.println("A "+ex.getMessage());
         }catch(Exception ex){
-            System.out.println(ex.getMessage());
+            System.out.println("B "+ex.getMessage());
+            JOptionPane.showMessageDialog(null, "El sistema perdío conexión con la Base de Datos, Por favor intente nuevamente", "Error", JOptionPane.ERROR_MESSAGE);
         }finally{
             try{
                 ps.close();
-                rs.close();
             }catch(Exception ex){}
         }
         return list;
