@@ -18,13 +18,13 @@ public class Tianquiztli {
     
     public static void main(String[] args) {
 
-        VisualizarProductos vp = new VisualizarProductos();
+        /*VisualizarProductos vp = new VisualizarProductos();
         vp.setVisible(true);
-        vp.setLocationRelativeTo(null);
-        /*VentanaLogin log = new VentanaLogin();
+        vp.setLocationRelativeTo(null);*/
+        VentanaLogin log = new VentanaLogin();
         log.setVisible(true);
         
-        PantallaRegistrarProductos pantallaRegistro = new PantallaRegistrarProductos();
+        /*PantallaRegistrarProductos pantallaRegistro = new PantallaRegistrarProductos();
         Productos_DAO producto_dao = new Productos_DAO();
         ControladorPantallaRegistrarProductos rpc = new ControladorPantallaRegistrarProductos(producto_dao, pantallaRegistro);
         //

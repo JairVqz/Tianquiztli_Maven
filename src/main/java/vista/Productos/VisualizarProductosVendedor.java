@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 //import ProductoV.controlador.ControladorP;
 import controlador.Productos.ControladorP;
+import controlador.Productos.ControladorPantallaRegistrarProductos;
 import vista.Productos.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
@@ -40,9 +41,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
     public VisualizarProductosVendedor() {
         initComponents();
         this.setLocationRelativeTo(this);
-        this.logoImagen(this.logo, "src/main/java/Imagenes/logo.png");
-        this.logoImagen(this.titulo, "src/main/java/Imagenes/titulo.png");
-        
+        this.logoImagen(this.logo, "src/main/java/Imagenes/logo.png");   
         t.visualizar_ProductoVO(tabla);
         
     }
@@ -54,6 +53,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         tf4_precio.setText("");
         ta1.setText("");
         txtfoto.setText("");
+        tf5_cantidad.setText("");
         codigo = 0;
     }
   
@@ -91,11 +91,9 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         b5 = new javax.swing.JButton();
         b1 = new javax.swing.JButton();
         logo = new javax.swing.JLabel();
-        titulo = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -353,21 +351,10 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
-        titulo.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-
         jButton2.setText("Agregar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setText("Eliminar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
             }
         });
 
@@ -378,39 +365,19 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setText("Eliminar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         jButton5.setText("Limpiar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -419,37 +386,44 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(238, 238, 238))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(53, 53, 53)))
+                        .addGap(29, 29, 29))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(90, 90, 90))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(165, 165, 165)
-                        .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(90, 90, 90))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(285, 285, 285)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(56, 56, 56))))
         );
 
         jTabbedPane1.addTab("PRODUCTOS", jPanel1);
@@ -470,53 +444,6 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        limpiar();
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
-        int id = Integer.parseInt(tf1_id.getText());
-        String nombre = tf2_nombre.getText();
-        String tipo = tf3_tipo.getText();
-        String descripcion = ta1.getText();
-        int precio = Integer.parseInt(tf4_precio.getText());
-        String cantidad = tf5_cantidad.getText();
-        //File ruta = new File(txtfoto.getText());
-        
-        System.out.println("Entré");
-            this.modificar2(nombre, tipo,descripcion,precio ,id,cantidad);
-            t.visualizar_ProductoVO(tabla);
-            limpiar();
-
-        /*if(txtfoto==null){
-            this.modificar(nombre, tipo,descripcion,precio ,ruta,id,cantidad);
-            t.visualizar_ProductoVO(tabla);
-            limpiar();
-        }else{
-            System.out.println("Entré");
-            this.modificar2(nombre, tipo,descripcion,precio ,id,cantidad);
-            t.visualizar_ProductoVO(tabla);
-            limpiar();
-        }*/
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        //Método Eliminar
-        int id = Integer.parseInt(tf1_id.getText());
-        int a = JOptionPane.showConfirmDialog(null, "Desea eliminar este producto","Mensaje",JOptionPane.OK_CANCEL_OPTION);
-        if(a == 0){
-            this.eliminar(id);
-            limpiar();
-        }
-        t.visualizar_ProductoVO(tabla);
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-        //Método agregar
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
         /* c = new Conexion();
@@ -541,6 +468,10 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         t.vArtesania(tabla);
     }//GEN-LAST:event_b2ActionPerformed
 
+    private void tf5_cantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf5_cantidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf5_cantidadActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JFileChooser j = new JFileChooser();
         FileNameExtensionFilter fil = new FileNameExtensionFilter("JPG, PNG & GIF","jpg","png","gif");
@@ -551,7 +482,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
             String ruta = j.getSelectedFile().getAbsolutePath();
             txtfoto.setText(ruta);
         }
-        
+
         int id = Integer.parseInt(tf1_id.getText());
         String nombre = tf2_nombre.getText();
         String tipo = tf3_tipo.getText();
@@ -559,10 +490,10 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         int precio = Integer.parseInt(tf4_precio.getText());
         String cantidad = tf5_cantidad.getText();
         File ruta = new File(txtfoto.getText());
-        
-            this.modificar(nombre, tipo,descripcion,precio ,ruta,id,cantidad);
-            t.visualizar_ProductoVO(tabla);
-            limpiar();
+
+        this.modificar(nombre, tipo,descripcion,precio ,ruta,id,cantidad);
+        t.visualizar_ProductoVO(tabla);
+        limpiar();
         /*if(txtfoto==null){
             this.modificar(nombre, tipo,descripcion,precio ,ruta,id,cantidad);
             t.visualizar_ProductoVO(tabla);
@@ -573,8 +504,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
             t.visualizar_ProductoVO(tabla);
             limpiar();
         }*/
-        
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tf1_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf1_idActionPerformed
@@ -604,9 +534,58 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         producto.setIcon(iconoEscalado);
     }//GEN-LAST:event_tablaMouseClicked
 
-    private void tf5_cantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf5_cantidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf5_cantidadActionPerformed
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        limpiar();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+        int id = Integer.parseInt(tf1_id.getText());
+        String nombre = tf2_nombre.getText();
+        String tipo = tf3_tipo.getText();
+        String descripcion = ta1.getText();
+        int precio = Integer.parseInt(tf4_precio.getText());
+        String cantidad = tf5_cantidad.getText();
+        //File ruta = new File(txtfoto.getText());
+
+        System.out.println("Entré");
+        this.modificar2(nombre, tipo,descripcion,precio ,id,cantidad);
+        t.visualizar_ProductoVO(tabla);
+        limpiar();
+
+        /*if(txtfoto==null){
+            this.modificar(nombre, tipo,descripcion,precio ,ruta,id,cantidad);
+            t.visualizar_ProductoVO(tabla);
+            limpiar();
+        }else{
+            System.out.println("Entré");
+            this.modificar2(nombre, tipo,descripcion,precio ,id,cantidad);
+            t.visualizar_ProductoVO(tabla);
+            limpiar();
+        }*/
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        //Método Eliminar
+        int id = Integer.parseInt(tf1_id.getText());
+        int a = JOptionPane.showConfirmDialog(null, "Desea eliminar este producto","Mensaje",JOptionPane.OK_CANCEL_OPTION);
+        if(a == 0){
+            this.eliminar(id);
+            limpiar();
+        }
+        t.visualizar_ProductoVO(tabla);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        PantallaRegistrarProductos pantallaRegistro = new PantallaRegistrarProductos();
+        Productos_DAO producto_dao = new Productos_DAO();
+        ControladorPantallaRegistrarProductos rpc = new ControladorPantallaRegistrarProductos(producto_dao, pantallaRegistro);
+        //
+        pantallaRegistro.setTitle("Tianquiztli");
+        pantallaRegistro.setLocationRelativeTo(null);
+        pantallaRegistro.setVisible(true);
+        //Método agregar
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {
         
@@ -674,11 +653,11 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
    
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton b1;
-    public javax.swing.JButton b2;
-    public javax.swing.JButton b3;
-    public javax.swing.JButton b4;
-    public javax.swing.JButton b5;
+    private javax.swing.JButton b1;
+    private javax.swing.JButton b2;
+    private javax.swing.JButton b3;
+    private javax.swing.JButton b4;
+    private javax.swing.JButton b5;
     private javax.swing.JLabel cantidad;
     private javax.swing.JLabel costo;
     private javax.swing.JLabel descripcion;
@@ -688,27 +667,25 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    public javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    public javax.swing.JLabel logo;
+    private javax.swing.JLabel logo;
     private javax.swing.JLabel nombre;
-    public javax.swing.JLabel producto;
-    public javax.swing.JTextArea ta1;
-    public javax.swing.JTable tabla;
-    public javax.swing.JTextField tf1_id;
-    public javax.swing.JTextField tf2_nombre;
-    public javax.swing.JTextField tf3_tipo;
-    public javax.swing.JTextField tf4_precio;
+    private javax.swing.JLabel producto;
+    private javax.swing.JTextArea ta1;
+    private javax.swing.JTable tabla;
+    private javax.swing.JTextField tf1_id;
+    private javax.swing.JTextField tf2_nombre;
+    private javax.swing.JTextField tf3_tipo;
+    private javax.swing.JTextField tf4_precio;
     private javax.swing.JTextField tf5_cantidad;
     private javax.swing.JLabel tipo;
-    private javax.swing.JLabel titulo;
     private javax.swing.JTextArea txtfoto;
     // End of variables declaration//GEN-END:variables
 }

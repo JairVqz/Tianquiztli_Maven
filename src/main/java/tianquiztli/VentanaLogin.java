@@ -7,13 +7,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import modelo.ConexionBD;
 import vista.Productos.VisualizarProductos;
+import vista.Productos.VisualizarProductosVendedor;
 import vista.Repartidor.VisualizarPedidoR;
 
 public class VentanaLogin extends javax.swing.JFrame {
     
-    Conexion conectar = new Conexion();
+    ConexionBD conectar = new ConexionBD();
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
@@ -152,7 +156,7 @@ public class VentanaLogin extends javax.swing.JFrame {
         int resultado= 0;
         String usuario=userTxt.getText();
         String contraseña=passF.getText();
-        String SQL="select * from comprador where nombreV='"+usuario+"' and contraseñaV='"+contraseña+"'";
+        String SQL="select * from comprador where nombreC= '"+usuario+"' and contraseñaC= '"+contraseña + "'";
         
         try{
             con=conectar.getConnection();
@@ -168,10 +172,17 @@ public class VentanaLogin extends javax.swing.JFrame {
                vp.setLocationRelativeTo(null);
                
             }else{
-                ps=con.prepareStatement("select * from vendedor where nombre='"+usuario+"' and contraseña='"+contraseña+"'");
+                ps=con.prepareStatement("select * from vendedor where nombreV= '"+usuario+"' and contraseñaV= '"+contraseña+ "'");
                 rs=ps.executeQuery();
                 
                 if(rs.next()){
+                    
+                    VisualizarProductosVendedor vpv = new VisualizarProductosVendedor();
+               
+               ControladorP cpz = new ControladorP(vpv);
+               this.setVisible(false);
+               vpv.setVisible(true);
+               vpv.setLocationRelativeTo(null);
 
                 }else{
                    JOptionPane.showMessageDialog(null,"Datos incorrectos");  
@@ -188,9 +199,8 @@ public class VentanaLogin extends javax.swing.JFrame {
                vpr.setLocationRelativeTo(null);
             }
             
-            
-        }catch (HeadlessException | SQLException e){
-            JOptionPane.showMessageDialog(null,"Error de conexión " + e.getMessage());
+        } catch (Exception ex) {
+            Logger.getLogger(VentanaLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
         
        /* try{

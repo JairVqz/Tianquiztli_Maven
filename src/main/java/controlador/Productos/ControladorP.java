@@ -12,12 +12,18 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modelo.*;
 import vista.Productos.VisualizarProductos;
+import vista.Productos.VisualizarProductosVendedor;
 public class ControladorP {
      ProductoDAO dao = null;
      VisualizarProductos vp;
+     VisualizarProductosVendedor vpv;
 
     public ControladorP(VisualizarProductos vp) {
         this.vp = vp;
+    }
+    
+    public ControladorP(VisualizarProductosVendedor vpv) {
+        this.vpv = vpv;
     }
 
     public ControladorP() {
