@@ -50,11 +50,11 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
     public void limpiar(){
         tf1_id.setText("");
         tf2_nombre.setText("");
-        tf3_tipo.setText("");
+        //tf3_tipo.setSelectedItem("Artesanía");
         tf4_precio.setText("");
         ta1.setText("");
         txtfoto.setText("");
-        tf5_cantidad.setText("");
+        //tf5_cantidad.setSelectedItem("Disponible");
         codigo = 0;
     }
   
@@ -73,7 +73,6 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         tipo = new javax.swing.JLabel();
         tf1_id = new javax.swing.JTextField();
         tf2_nombre = new javax.swing.JTextField();
-        tf3_tipo = new javax.swing.JTextField();
         descripcion = new javax.swing.JLabel();
         costo = new javax.swing.JLabel();
         cantidad = new javax.swing.JLabel();
@@ -84,7 +83,8 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtfoto = new javax.swing.JTextArea();
-        tf5_cantidad = new javax.swing.JTextField();
+        tf3_tipo = new javax.swing.JComboBox<>();
+        tf5_cantidad = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         b2 = new javax.swing.JButton();
         b3 = new javax.swing.JButton();
@@ -183,11 +183,14 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         txtfoto.setRows(5);
         jScrollPane3.setViewportView(txtfoto);
 
-        tf5_cantidad.addActionListener(new java.awt.event.ActionListener() {
+        tf3_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Artesanía", "Comida", "Bebida", "Accesorio" }));
+        tf3_tipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf5_cantidadActionPerformed(evt);
+                tf3_tipoActionPerformed(evt);
             }
         });
+
+        tf5_cantidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Disponible", "Agotado" }));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -206,8 +209,8 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(tf2_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                                    .addComponent(tf3_tipo)
-                                    .addComponent(tf1_id))
+                                    .addComponent(tf1_id)
+                                    .addComponent(tf3_tipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(26, 26, 26)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cantidad)
@@ -215,7 +218,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(tf4_precio, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
-                                    .addComponent(tf5_cantidad)))
+                                    .addComponent(tf5_cantidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(descripcion)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -248,17 +251,16 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
                                 .addGap(21, 21, 21)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(nombre)
-                                    .addComponent(cantidad)))
+                                    .addComponent(cantidad)
+                                    .addComponent(tf5_cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tipo)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(tf5_cantidad)
-                                        .addGap(2, 2, 2))
-                                    .addComponent(tf2_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tipo)
-                            .addComponent(tf3_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(tf2_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tf3_tipo)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
@@ -317,22 +319,17 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(b3, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                            .addComponent(b4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(b5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(b2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(b1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(b3, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                    .addComponent(b4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(b5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(b2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(b1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -472,10 +469,6 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         t.vArtesania(tabla);
     }//GEN-LAST:event_b2ActionPerformed
 
-    private void tf5_cantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf5_cantidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf5_cantidadActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JFileChooser j = new JFileChooser();
         FileNameExtensionFilter fil = new FileNameExtensionFilter("JPG, PNG & GIF","jpg","png","gif");
@@ -489,10 +482,12 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
 
         int id = Integer.parseInt(tf1_id.getText());
         String nombre = tf2_nombre.getText();
-        String tipo = tf3_tipo.getText();
+        String tipo = (String) tf3_tipo.getSelectedItem();
+        //String tipo = (String) pantallaRegistro.tipoProducto.getSelectedItem();
         String descripcion = ta1.getText();
         int precio = Integer.parseInt(tf4_precio.getText());
-        String cantidad = tf5_cantidad.getText();
+        
+        String cantidad = (String) tf5_cantidad.getSelectedItem();
         File ruta = new File(txtfoto.getText());
 
         this.modificar(nombre, tipo,descripcion,precio ,ruta,id,cantidad);
@@ -522,10 +517,13 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
 
         tf1_id.setText(tabla.getValueAt(filaSeleccionada, 0).toString());
         tf2_nombre.setText(tabla.getValueAt(filaSeleccionada, 1).toString());
-        tf3_tipo.setText(tabla.getValueAt(filaSeleccionada, 2).toString());
+        
+        //tf3_tipo.setText(tabla.getValueAt(filaSeleccionada, 2).toString());
+        tf3_tipo.setSelectedItem(tabla.getValueAt(filaSeleccionada, 2).toString());
         ta1.setText(tabla.getValueAt(filaSeleccionada, 3).toString());
         tf4_precio.setText(tabla.getValueAt(filaSeleccionada, 4).toString());
-        tf5_cantidad.setText(tabla.getValueAt(filaSeleccionada, 5).toString());
+        tf5_cantidad.setSelectedItem(tabla.getValueAt(filaSeleccionada, 5).toString());
+        //tf5_cantidad.setText(tabla.getValueAt(filaSeleccionada, 5).toString());
         //txtfoto.setText(tabla.getValueAt(filaSeleccionada, 6).toString());
 
         // se muestra la imagen en el jlabel
@@ -544,7 +542,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-        int id = Integer.parseInt(tf1_id.getText());
+        /*int id = Integer.parseInt(tf1_id.getText());
         String nombre = tf2_nombre.getText();
         String tipo = tf3_tipo.getText();
         String descripcion = ta1.getText();
@@ -554,6 +552,9 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
 
         System.out.println("Entré");
         this.modificar2(nombre, tipo,descripcion,precio ,id,cantidad);
+        t.visualizar_ProductoVO(tabla);
+        limpiar();*/
+        this.recibirDatos();
         t.visualizar_ProductoVO(tabla);
         limpiar();
 
@@ -590,6 +591,10 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         pantallaRegistro.setVisible(true);
         //Método agregar
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void tf3_tipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf3_tipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf3_tipoActionPerformed
 
     public static void main(String args[]) {
         
@@ -656,6 +661,129 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
     
    
     }
+    
+    
+    
+    public void recibirDatos(){
+        Productos producto = new Productos();
+        System.out.println("No Entró if");
+        if(campoVacioId_V() && campoVacioNombre() && campoVacioDescripcion()  && campoVacioPrecio() && campoNumericoValidoPrecio() ){
+        System.out.println("Entró if");
+        int id = Integer.parseInt(tf1_id.getText());
+        String nombre = tf2_nombre.getText();
+        String tipo = (String) tf3_tipo.getSelectedItem();
+        String descripcion = ta1.getText();
+        int precio = Integer.parseInt(tf4_precio.getText());
+        String cantidad = (String) tf5_cantidad.getSelectedItem();
+            //File ruta = new File (vpv.txtRuta.getText());
+            //this.agregarProducto(id_V, nombre, tipo, descripcion, precio, stock, ruta);
+            this.modificar2(nombre, tipo,descripcion,precio ,id,cantidad);
+        }
+    }
+    
+    private boolean campoVacioId_V(){
+        String errorMessage = "";
+        if(tf1_id.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null, "El campo Id está vacío, verifica el campo", "Error", JOptionPane.WARNING_MESSAGE);
+        }
+                
+        if(errorMessage.length() == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    private boolean campoVacioNombre(){
+        String errorMessage = "";
+        if(tf2_nombre.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null, "El campo Id está vacío, verifica el campo", "Error", JOptionPane.WARNING_MESSAGE);
+        }
+                
+        if(errorMessage.length() == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    /*private boolean tipo(){
+        String errorMessage = "";
+        if(tf3_tipo.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null, "El campo tipo está vacío, verifica el campo", "Error", JOptionPane.WARNING_MESSAGE);
+        }
+                
+        if(errorMessage.length() == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }*/
+     
+     /*private boolean stock(){
+        String errorMessage = "";
+        if(tf5_cantidad.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null, "El campo Stock está vacío, verifica el campo", "Error", JOptionPane.WARNING_MESSAGE);
+        }
+                
+        if(errorMessage.length() == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }*/
+     
+    private boolean campoVacioDescripcion(){
+        String errorMessage = "";
+        if(ta1.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null, "El campo descripción está vacío, verifica el campo", "Error", JOptionPane.WARNING_MESSAGE);
+        }
+                
+        if(errorMessage.length() == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    private boolean campoVacioPrecio(){
+        String errorMessage = "";
+        if(tf4_precio.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null, "El campo precio está vacío, verifica el campo", "Error", JOptionPane.WARNING_MESSAGE);
+        }
+                
+        if(errorMessage.length() == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    private boolean campoNumericoPrecio(){
+        boolean numero = false;
+        String precio = tf4_precio.getText();
+        for(int i = 0;i<precio.length();i++){
+            if(precio.charAt(i) == '1' || precio.charAt(i) == '2'|| precio.charAt(i) == '3' ||
+                    precio.charAt(i) == '4' || precio.charAt(i) == '5' || precio.charAt(i) == '6' ||
+                    precio.charAt(i) == '7' || precio.charAt(i) == '8' || precio.charAt(i) == '9'){
+                numero = true;
+                break;
+            }
+        }
+        return numero;
+    }
+    
+    private boolean campoNumericoValidoPrecio(){
+        String errorMessage = "";
+        if(this.campoNumericoPrecio() == false){
+            JOptionPane.showMessageDialog(null, "El campo precio solo debe tener numeros, verifica el campo", "Error", JOptionPane.WARNING_MESSAGE);
+        }      
+        if(errorMessage.length() == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton b1;
     public javax.swing.JButton b2;
@@ -686,9 +814,9 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
     public javax.swing.JTable tabla;
     public javax.swing.JTextField tf1_id;
     public javax.swing.JTextField tf2_nombre;
-    public javax.swing.JTextField tf3_tipo;
+    private javax.swing.JComboBox<String> tf3_tipo;
     public javax.swing.JTextField tf4_precio;
-    private javax.swing.JTextField tf5_cantidad;
+    private javax.swing.JComboBox<String> tf5_cantidad;
     private javax.swing.JLabel tipo;
     private javax.swing.JTextArea txtfoto;
     // End of variables declaration//GEN-END:variables

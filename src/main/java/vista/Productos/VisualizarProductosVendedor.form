@@ -211,8 +211,8 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="tf2_nombre" pref="121" max="32767" attributes="0"/>
-                                              <Component id="tf3_tipo" max="32767" attributes="0"/>
                                               <Component id="tf1_id" max="32767" attributes="0"/>
+                                              <Component id="tf3_tipo" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -267,22 +267,18 @@
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="nombre" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="cantidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="tf5_cantidad" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                           </Group>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="tipo" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="tf5_cantidad" max="32767" attributes="0"/>
-                                                  <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="tf2_nombre" min="-2" pref="35" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="tf2_nombre" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="tf3_tipo" max="32767" attributes="0"/>
                                       </Group>
-                                  </Group>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="tipo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="tf3_tipo" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -340,11 +336,6 @@
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.JTextField" name="tf2_nombre">
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-                  </AuxValues>
-                </Component>
-                <Component class="javax.swing.JTextField" name="tf3_tipo">
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                   </AuxValues>
@@ -431,10 +422,28 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JTextField" name="tf5_cantidad">
+                <Component class="javax.swing.JComboBox" name="tf3_tipo">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Artesan&#xed;a&quot;, &quot;Comida&quot;, &quot;Bebida&quot;, &quot;Accesorio&quot; })" type="code"/>
+                    </Property>
+                  </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf5_cantidadActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf3_tipoActionPerformed"/>
                   </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="tf5_cantidad">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Disponible&quot;, &quot;Agotado&quot; })" type="code"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
@@ -444,27 +453,19 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="b3" alignment="0" pref="150" max="32767" attributes="0"/>
-                                      <Component id="b4" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="b5" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="b2" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="b3" alignment="0" pref="150" max="32767" attributes="0"/>
+                              <Component id="b4" alignment="1" max="32767" attributes="0"/>
+                              <Component id="b5" alignment="0" max="32767" attributes="0"/>
+                              <Component id="b2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="logo" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="logo" max="32767" attributes="0"/>
+                                  <Component id="b1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="b1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>

@@ -222,6 +222,7 @@ public class ProductoDAO {
             //JOptionPane.showMessageDialog(null, "El Producto ha sido actualizado", "Operación exitosa ", JOptionPane.INFORMATION_MESSAGE);
         }catch(SQLException ex){
             System.out.println("A "+ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Su sesión caducó, por favor inicie sesión de nuevo", "Error", JOptionPane.ERROR_MESSAGE);
         }catch(Exception ex){
             System.out.println("B "+ex.getMessage());
             JOptionPane.showMessageDialog(null, "El sistema perdío conexión con la Base de Datos, Por favor intente nuevamente", "Error", JOptionPane.ERROR_MESSAGE);
@@ -285,6 +286,7 @@ public class ProductoDAO {
             ps.executeUpdate();
         }catch(SQLException ex){
             System.out.println("A "+ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Su sesión caducó, por favor inicie sesión de nuevo", "Error", JOptionPane.ERROR_MESSAGE);
         }catch(Exception ex){
             System.out.println("B "+ex.getMessage());
             JOptionPane.showMessageDialog(null, "El sistema perdío conexión con la Base de Datos, Por favor intente nuevamente", "Error", JOptionPane.ERROR_MESSAGE);
