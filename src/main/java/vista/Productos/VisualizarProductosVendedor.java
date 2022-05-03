@@ -27,6 +27,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import modelo.Productos.Productos_DAO;
+import tianquiztli.VentanaLogin;
 
 public class VisualizarProductosVendedor extends javax.swing.JFrame {
     
@@ -304,7 +305,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
             }
         });
 
-        b1.setText("<");
+        b1.setText("Cerrar Sesión");
         b1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b1ActionPerformed(evt);
@@ -325,13 +326,13 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
                             .addComponent(b5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(b2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(b1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(b1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -346,9 +347,9 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
                 .addComponent(b4)
                 .addGap(18, 18, 18)
                 .addComponent(b5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
                 .addComponent(b1)
-                .addGap(16, 16, 16))
+                .addContainerGap())
         );
 
         jButton2.setText("Agregar");
@@ -448,7 +449,10 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
         /* c = new Conexion();
         Connection regreso = c.getConnection();*/
-
+        VentanaLogin log = new VentanaLogin();
+        log.setVisible(true);
+        this.setVisible(false);
+        log.setLocationRelativeTo(null);
         //AQUI VA LA PAGINA EN LA QUE ESTABA
     }//GEN-LAST:event_b1ActionPerformed
 
@@ -653,11 +657,11 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
    
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton b1;
-    private javax.swing.JButton b2;
-    private javax.swing.JButton b3;
-    private javax.swing.JButton b4;
-    private javax.swing.JButton b5;
+    public javax.swing.JButton b1;
+    public javax.swing.JButton b2;
+    public javax.swing.JButton b3;
+    public javax.swing.JButton b4;
+    public javax.swing.JButton b5;
     private javax.swing.JLabel cantidad;
     private javax.swing.JLabel costo;
     private javax.swing.JLabel descripcion;
@@ -667,7 +671,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -675,15 +679,15 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JLabel logo;
+    public javax.swing.JLabel logo;
     private javax.swing.JLabel nombre;
-    private javax.swing.JLabel producto;
-    private javax.swing.JTextArea ta1;
-    private javax.swing.JTable tabla;
-    private javax.swing.JTextField tf1_id;
-    private javax.swing.JTextField tf2_nombre;
-    private javax.swing.JTextField tf3_tipo;
-    private javax.swing.JTextField tf4_precio;
+    public javax.swing.JLabel producto;
+    public javax.swing.JTextArea ta1;
+    public javax.swing.JTable tabla;
+    public javax.swing.JTextField tf1_id;
+    public javax.swing.JTextField tf2_nombre;
+    public javax.swing.JTextField tf3_tipo;
+    public javax.swing.JTextField tf4_precio;
     private javax.swing.JTextField tf5_cantidad;
     private javax.swing.JLabel tipo;
     private javax.swing.JTextArea txtfoto;

@@ -23,6 +23,7 @@ public class Tianquiztli {
         vp.setLocationRelativeTo(null);*/
         VentanaLogin log = new VentanaLogin();
         log.setVisible(true);
+        log.setLocationRelativeTo(null);
         
         /*PantallaRegistrarProductos pantallaRegistro = new PantallaRegistrarProductos();
         Productos_DAO producto_dao = new Productos_DAO();
