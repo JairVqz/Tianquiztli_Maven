@@ -3,6 +3,7 @@ C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\model
 C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\vista\Productos\PantallaRegistrarProductos.java
 C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\RegistrarCompradorModelo\Conexion.java
 C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\controlador\RegistrarVendedorControlador\VendedorControlador.java
+C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\controlador\Productos\ControladorPantallaEditarProductos.java
 C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\controlador\Productos\ControladorPantallaRegistrarProductos.java
 C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\VisualizarProducto\Productos.java
 C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\vista\Repartidor\VisualizarPedidoR.java
@@ -13,6 +14,7 @@ C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\model
 C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\Productos\Productos.java
 C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\vista\RegistrarVendedorVista\RegistrarVendedor.java
 C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\PedidoR\PedidoRDAO.java
+C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\vista\Productos\PantallaEditarProductos.java
 C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\tianquiztli\Tianquiztli.java
 C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\Carrito\Carrito_DAO.java
 C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\RegistrarCompradorModelo\CompradorDAO.java
