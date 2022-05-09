@@ -59,7 +59,7 @@ public class VentanaLogin extends javax.swing.JFrame {
 
         ISbtn.setBackground(new java.awt.Color(0, 153, 153));
         ISbtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        ISbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconfinder-home-4341294_120570.png"))); // NOI18N
+        ISbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/iconfinder-home-4341294_120570.png"))); // NOI18N
         ISbtn.setText("Iniciar Sesión");
         ISbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,7 +69,7 @@ public class VentanaLogin extends javax.swing.JFrame {
 
         Regisbtn.setBackground(new java.awt.Color(66, 187, 25));
         Regisbtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        Regisbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconfinder-inbox-4341297_120539.png"))); // NOI18N
+        Regisbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/iconfinder-inbox-4341297_120539.png"))); // NOI18N
         Regisbtn.setText("Registrarse");
         Regisbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,14 +77,14 @@ public class VentanaLogin extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoTian.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/LogoTian.png"))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         jLabel1.setText("¡Mah cualli xihualacan!");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconfinder-key-4341299_120569.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/iconfinder-key-4341299_120569.png"))); // NOI18N
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconfinder-lock-4341303_120563.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/iconfinder-lock-4341303_120563.png"))); // NOI18N
 
         passF.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         passF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -140,7 +140,6 @@ public class VentanaLogin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -149,7 +148,7 @@ public class VentanaLogin extends javax.swing.JFrame {
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(userTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
