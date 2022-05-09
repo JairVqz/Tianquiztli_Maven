@@ -210,6 +210,8 @@ public class VentanaLogin extends javax.swing.JFrame {
         public void validarUsuario(){
         
         int resultado= 0;
+        int id = 0;
+        int idR = 0;
         String usuario=userTxt.getText();
         String contraseña=passF.getText();
         String SQL="select * from comprador where nombreC= '"+usuario+"' and contraseñaC= '"+contraseña + "'";
@@ -221,6 +223,7 @@ public class VentanaLogin extends javax.swing.JFrame {
             
             if(rs.next()){
                VisualizarProductos vp = new VisualizarProductos();
+               vp.l_usuario.setText(usuario);
                
                ControladorP cpz = new ControladorP(vp);
                this.setVisible(false);
@@ -232,8 +235,11 @@ public class VentanaLogin extends javax.swing.JFrame {
                 rs=ps.executeQuery();
                 
                 if(rs.next()){
-                    
+                    id = rs.getInt("id_V");
                     VisualizarProductosVendedor vpv = new VisualizarProductosVendedor();
+                    
+                    vpv.l_user.setText(usuario);
+                    vpv.l_id.setText(String.valueOf(id));
                
                ControladorP cpz = new ControladorP(vpv);
                this.setVisible(false);
@@ -247,7 +253,11 @@ public class VentanaLogin extends javax.swing.JFrame {
                 ps=con.prepareStatement("select * from repartidor where nombreR='"+usuario+"' and contraseñaR='"+contraseña+"'");
                 rs=ps.executeQuery();
             if(rs.next()){
+                idR = rs.getInt("id_R");
                 VisualizarPedidoR vpr = new VisualizarPedidoR();
+                
+                vpr.l_repartidor.setText(usuario);
+                vpr.l_idRepartidor.setText(String.valueOf(idR));
                
                TablaPedidoR tp = new TablaPedidoR(vpr);
                this.setVisible(false);

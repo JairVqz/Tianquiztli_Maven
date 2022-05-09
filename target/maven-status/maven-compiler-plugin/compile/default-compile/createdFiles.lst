@@ -68,6 +68,7 @@ tianquiztli\Tianquiztli.class
 vista\Productos\PantallaCarrito$4.class
 vista\Productos\VisualizarProductos$4.class
 vista\RegistrarCompradorVista\RegistrarComprador.class
+vista\Productos\VisualizarProductosVendedor$13.class
 vista\Productos\VisualizarProductosVendedor$3.class
 vista\Productos\PantallaCarrito$1.class
 vista\Productos\VisualizarProductosVendedor$10.class
@@ -81,6 +82,7 @@ vista\Productos\VisualizarProductosVendedor$4.class
 controlador\Productos\ControladorP.class
 vista\Repartidor\VisualizarPedidoR.class
 controlador\Productos\ControladorP$3.class
+vista\Productos\VisualizarProductosVendedor$14.class
 vista\Productos\PantallaEditarProductos$3.class
 vista\Repartidor\VisualizarPedidoR$1.class
 vista\Productos\PantallaRegistrarProductos$5.class

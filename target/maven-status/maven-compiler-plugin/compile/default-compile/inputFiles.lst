@@ -1,37 +1,37 @@
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\vista\RegistrarCompradorVista\RegistrarComprador.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\RegistrarVendedorModelo\Conexion.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\vista\Productos\PantallaRegistrarProductos.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\RegistrarCompradorModelo\Conexion.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\controlador\RegistrarVendedorControlador\VendedorControlador.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\controlador\Productos\ControladorPantallaEditarProductos.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\controlador\Productos\ControladorPantallaRegistrarProductos.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\VisualizarProducto\Productos.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\vista\Repartidor\VisualizarPedidoR.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\Carrito\Carrito.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\vista\RegistrarVendedorVista\Conexion.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\controlador\Productos\ControladorP.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\PedidoR\Render.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\Productos\Productos.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\vista\RegistrarVendedorVista\RegistrarVendedor.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\PedidoR\PedidoRDAO.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\vista\Productos\PantallaEditarProductos.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\tianquiztli\Tianquiztli.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\Carrito\Carrito_DAO.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\RegistrarCompradorModelo\CompradorDAO.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\Productos\Productos_DAO.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\RegistrarCompradorModelo\Comprador.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\controlador\Carrito\ControladorCarrito.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\RegistrarVendedorModelo\VendedorDAO.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\VisualizarProducto\ProductoDAO.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\vista\RegistrarCompradorVista\Conexion.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\vista\Productos\VisualizarProductosVendedor.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\PedidoR\PedidoR.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\vista\Productos\PantallaCarrito.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\tianquiztli\VentanaLogin.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\controlador\RegistrarCompradorControlador\CompradorControlador.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\tianquiztli\Conexion.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\VisualizarProducto\Render.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\RegistrarVendedorModelo\Vendedor.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\controlador\PedidoR\TablaPedidoR.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\modelo\ConexionBD.java
-C:\Users\Aridai\Documents\NetBeansProjects\Tianquiztli_Maven\src\main\java\vista\Productos\VisualizarProductos.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\modelo\PedidoR\PedidoRDAO.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\tianquiztli\Tianquiztli.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\modelo\VisualizarProducto\ProductoDAO.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\controlador\PedidoR\TablaPedidoR.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\controlador\Productos\ControladorPantallaRegistrarProductos.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\controlador\RegistrarVendedorControlador\VendedorControlador.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\tianquiztli\VentanaLogin.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\vista\RegistrarCompradorVista\Conexion.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\vista\RegistrarVendedorVista\Conexion.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\controlador\Carrito\ControladorCarrito.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\modelo\RegistrarCompradorModelo\CompradorDAO.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\modelo\VisualizarProducto\Productos.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\vista\Productos\PantallaCarrito.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\vista\Productos\PantallaEditarProductos.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\modelo\PedidoR\Render.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\modelo\RegistrarVendedorModelo\VendedorDAO.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\vista\Productos\PantallaRegistrarProductos.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\vista\Productos\VisualizarProductosVendedor.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\modelo\RegistrarVendedorModelo\Vendedor.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\modelo\VisualizarProducto\Render.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\vista\RegistrarVendedorVista\RegistrarVendedor.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\modelo\RegistrarVendedorModelo\Conexion.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\modelo\RegistrarCompradorModelo\Conexion.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\vista\Repartidor\VisualizarPedidoR.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\controlador\Productos\ControladorP.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\modelo\ConexionBD.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\modelo\RegistrarCompradorModelo\Comprador.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\vista\Productos\VisualizarProductos.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\tianquiztli\Conexion.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\modelo\Carrito\Carrito_DAO.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\modelo\Productos\Productos_DAO.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\controlador\RegistrarCompradorControlador\CompradorControlador.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\modelo\Carrito\Carrito.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\modelo\Productos\Productos.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\vista\RegistrarCompradorVista\RegistrarComprador.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\controlador\Productos\ControladorPantallaEditarProductos.java
+C:\Users\jair1\Desktop\Desarrollo de software\Tianquiztli_Maven\src\main\java\modelo\PedidoR\PedidoR.java
