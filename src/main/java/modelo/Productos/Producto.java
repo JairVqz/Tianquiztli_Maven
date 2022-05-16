@@ -9,18 +9,29 @@ package modelo.Productos;
  *
  * @author jair1
  */
-public class Productos {
+public class Producto {
     /*Todo los atributos*/
-    int id_P;
-    int id_V;
-    String nombre;
-    String tipo;
-    String descripcion;
-    int precio;
-    String stock;
+    public int id_P;
+    public int id_V;
+    public String nombre;
+    public String tipo;
+    public String descripcion;
+    public int precio;
+    public String stock;
     private byte[] foto;
+    public int cantidad;
+    public int total;
     
-    public Productos(){}
+    public Producto(){}
+    
+    public Producto(int id_V, String nombre, String descripcion, int cantidad, int precio, int total){
+        this.id_V = id_V;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.cantidad = cantidad;
+        this.precio = precio;
+        this.total = total;
+    }
 
 /*Todo los codigos get*/
     public int getId_P(){
@@ -43,6 +54,12 @@ public class Productos {
     }
     public String getStock(){
         return stock;
+    }
+    public int getCantidad(){
+        return cantidad;
+    }
+    public int getTotal(){
+        return total;
     }
 
 
@@ -68,6 +85,12 @@ public class Productos {
     public void setStock(String stock){
         this.stock = stock;
     }
+    public void setCantidad(int cantidad){
+        this.cantidad = cantidad;
+    }
+    public void setTotal(int total){
+        this.total = total;
+    }
 
     /**
      * @return the foto
@@ -82,4 +105,5 @@ public class Productos {
     public void setFoto(byte[] foto) {
         this.foto = foto;
     }
+    
 }

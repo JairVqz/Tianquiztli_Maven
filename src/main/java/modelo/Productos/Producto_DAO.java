@@ -9,9 +9,9 @@ import modelo.ConexionBD;
  *
  * @author jair1
  */
-public class Productos_DAO{
+public class Producto_DAO{
 
-    public void agregarProducto(Productos producto) {
+    public void agregarProducto(Producto producto) {
         ConexionBD c = new ConexionBD();
         String sql = "INSERT INTO productos (id_P, id_V, nombre, tipo, descripcion, precio, stock, foto)\n" +
 "VALUES (NULL,?,?,?,?,?,?,?);";

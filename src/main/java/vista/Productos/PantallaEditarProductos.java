@@ -9,7 +9,7 @@ import controlador.Productos.ControladorPantallaRegistrarProductos;
 import javax.swing.JFileChooser;
 import javax.swing.WindowConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import modelo.Productos.Productos_DAO;
+import modelo.Productos.Producto_DAO;
 import modelo.VisualizarProducto.ProductoDAO;
 
 /**

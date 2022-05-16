@@ -212,6 +212,7 @@ public class VentanaLogin extends javax.swing.JFrame {
         int resultado= 0;
         int id = 0;
         int idR = 0;
+        int idC = 0;
         String usuario=userTxt.getText();
         String contraseña=passF.getText();
         String SQL="select * from comprador where nombreC= '"+usuario+"' and contraseñaC= '"+contraseña + "'";
@@ -222,8 +223,13 @@ public class VentanaLogin extends javax.swing.JFrame {
             rs=ps.executeQuery();
             
             if(rs.next()){
+               idC = rs.getInt("id_C");
+               String direccion = rs.getString("dirección");
                VisualizarProductos vp = new VisualizarProductos();
+               
+               vp.l_idComprador.setText(String.valueOf(idC));
                vp.l_usuario.setText(usuario);
+               vp.l_direccionComprador.setText(direccion);
                
                ControladorP cpz = new ControladorP(vp);
                this.setVisible(false);

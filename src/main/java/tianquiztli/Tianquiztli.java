@@ -6,7 +6,7 @@
 package tianquiztli;
 
 import controlador.Productos.ControladorPantallaRegistrarProductos;
-import modelo.Productos.Productos_DAO;
+import modelo.Productos.Producto_DAO;
 import vista.Productos.PantallaRegistrarProductos;
 import vista.Productos.VisualizarProductos;
 
@@ -26,7 +26,7 @@ public class Tianquiztli {
         log.setLocationRelativeTo(null);
         
         /*PantallaRegistrarProductos pantallaRegistro = new PantallaRegistrarProductos();
-        Productos_DAO producto_dao = new Productos_DAO();
+        Producto_DAO producto_dao = new Producto_DAO();
         ControladorPantallaRegistrarProductos rpc = new ControladorPantallaRegistrarProductos(producto_dao, pantallaRegistro);
         //
         pantallaRegistro.setTitle("Tianquiztli");

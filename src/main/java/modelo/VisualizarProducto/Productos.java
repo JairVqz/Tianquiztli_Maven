@@ -8,6 +8,7 @@ public class Productos {
     public String descripcion;
     public String tipo;
     public int precio;
+    public String stock;
     public String cantidad;
     public byte[] imagen;
     

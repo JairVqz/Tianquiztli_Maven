@@ -8,8 +8,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import javax.swing.JOptionPane;
-import modelo.Productos.Productos;
-import modelo.Productos.Productos_DAO;
+import modelo.Productos.Producto;
+import modelo.Productos.Producto_DAO;
 import vista.Productos.PantallaRegistrarProductos;
 
 /**
@@ -17,17 +17,17 @@ import vista.Productos.PantallaRegistrarProductos;
  * @author jair1
  */
 public class ControladorPantallaRegistrarProductos{
-    private Productos producto;
-    private Productos_DAO producto_dao;
+    private Producto producto;
+    private Producto_DAO producto_dao;
     private PantallaRegistrarProductos pantallaRegistro;
     
-    public ControladorPantallaRegistrarProductos(Productos_DAO producto_dao, PantallaRegistrarProductos pantallaRegistro){
+    public ControladorPantallaRegistrarProductos(Producto_DAO producto_dao, PantallaRegistrarProductos pantallaRegistro){
         this.producto_dao=producto_dao;
         this.pantallaRegistro=pantallaRegistro;
     }
     
     public void recibirDatos(){
-        Productos producto = new Productos();
+        Producto producto = new Producto();
         
         if(campoVacioId_V() && campoVacioNombre() && campoVacioDescripcion() && campoVacioPrecio() && campoNumericoValidoPrecio() &&campoVacioRuta()){
             int id_V = Integer.parseInt(pantallaRegistro.txtId_V.getText());
@@ -43,8 +43,8 @@ public class ControladorPantallaRegistrarProductos{
     }
     
      public void agregarProducto(int id_V, String nombre, String tipo, String descripcion, int precio, String stock, File ruta){
-        Productos p = new Productos();
-        Productos_DAO dao = new Productos_DAO();
+        Producto p = new Producto();
+        Producto_DAO dao = new Producto_DAO();
         
         p.setId_V(id_V);
         p.setNombre(nombre);

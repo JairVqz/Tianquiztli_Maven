@@ -32,7 +32,7 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import modelo.Productos.Productos_DAO;
+import modelo.Productos.Producto_DAO;
 import tianquiztli.VentanaLogin;
 
 public class VisualizarProductosVendedor extends javax.swing.JFrame {
@@ -596,7 +596,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         PantallaRegistrarProductos pantallaRegistro = new PantallaRegistrarProductos();
-        Productos_DAO producto_dao = new Productos_DAO();
+        Producto_DAO producto_dao = new Producto_DAO();
         ControladorPantallaRegistrarProductos rpc = new ControladorPantallaRegistrarProductos(producto_dao, pantallaRegistro);
         //
         pantallaRegistro.setTitle("Tianquiztli");

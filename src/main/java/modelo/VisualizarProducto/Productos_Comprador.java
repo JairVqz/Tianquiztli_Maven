@@ -1,6 +1,6 @@
 package modelo.VisualizarProducto;
 
-public class Productos {
+public class Productos_Comprador {
     
     public int id ;
     public int idV;
@@ -8,20 +8,21 @@ public class Productos {
     public String descripcion;
     public String tipo;
     public int precio;
-    public String cantidad;
+    public String stock;
     public byte[] imagen;
     
-    public Productos(){
+    public Productos_Comprador(){
         
     }
 
-    public Productos(int id, String nombre, String descripcion, String tipo, int precio, String cantidad, byte[] imagen) {
+    public Productos_Comprador(int idV, String nombre, int id, String descripcion, String tipo, int precio, String stock, byte[] imagen) {
+        this.idV = idV;
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.tipo = tipo;
         this.precio = precio;
-        this.cantidad = cantidad;
+        this.stock = stock;
         this.imagen = imagen;
     }
 
@@ -34,7 +35,7 @@ public class Productos {
     }
     
     public int getIdV() {
-        return id;
+        return idV;
     }
 
     public void setIdV(int idV) {
@@ -73,12 +74,12 @@ public class Productos {
         this.precio = precio;
     }
 
-    public String getCantidad() {
-        return cantidad;
+    public String getStock() {
+        return stock;
     }
 
-    public void setCantidad(String cantidad) {
-        this.cantidad = cantidad;
+    public void setStock(String stock) {
+        this.stock = stock;
     }
 
     public byte[] getImagen() {

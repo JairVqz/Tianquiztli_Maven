@@ -8,7 +8,7 @@ import controlador.Productos.ControladorPantallaRegistrarProductos;
 import javax.swing.JFileChooser;
 import javax.swing.WindowConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import modelo.Productos.Productos_DAO;
+import modelo.Productos.Producto_DAO;
 
 /**
  *
@@ -16,7 +16,7 @@ import modelo.Productos.Productos_DAO;
  */
 public class PantallaRegistrarProductos extends javax.swing.JFrame {
     
-    Productos_DAO producto_dao = new Productos_DAO();
+    Producto_DAO producto_dao = new Producto_DAO();
     ControladorPantallaRegistrarProductos cprp = new ControladorPantallaRegistrarProductos(producto_dao,this);
     
     /**
