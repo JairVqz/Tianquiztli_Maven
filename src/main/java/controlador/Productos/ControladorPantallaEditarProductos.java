@@ -71,6 +71,21 @@ public class ControladorPantallaEditarProductos {
         }
     }
     
+    public void recibirDatos2(){
+        Productos producto = new Productos();
+        
+        
+        
+        if( campoVacioNombre() && campoVacioDescripcion() && campoVacioPrecio() && campoNumericoValidoPrecio() ){
+            int id = Integer.parseInt(pantallaEditar.txtId.getText());
+           
+            File ruta = new File (pantallaEditar.txtRuta.getText());
+        
+            //this.agregarProducto( nombre, tipo, descripcion, precio, stock, ruta);
+            this.modificar(ruta,id);
+        }
+    }
+    
     public void modificar2(String nombre, String tipo, String descripcion, int precio, int id, String cantidad){
         Productos vo = new Productos();
         dao = new ProductoDAO();
@@ -167,6 +182,24 @@ public class ControladorPantallaEditarProductos {
             return false;
         }
     } 
+    
+    
+        public void modificar(File foto, int id){
+        Productos vo = new Productos();
+        producto_dao = new ProductoDAO();
+
+        vo.setId(id);
+        
+        try{
+            byte[] icono = new byte[(int) foto.length()];
+            InputStream input = new FileInputStream(foto);
+            input.read(icono);
+            vo.setImagen(icono);
+        }catch(Exception ex){
+            vo.setImagen(null);
+        }
+        producto_dao.Modificar_ProductoVO(vo);
+    }
     
     /*private boolean campoVacioRuta(){
         String errorMessage = "";

@@ -193,6 +193,193 @@ public class ProductoDAO {
         return list;
     }
     
+    
+    public ArrayList<Productos> Listar_ProductoVO(int id_V){
+        
+        
+        ArrayList<Productos> list = new ArrayList<Productos>();
+        ConexionBD conec = new ConexionBD();
+        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, stock, foto FROM `productos`" +
+"WHERE id_V = " + id_V +";";  
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        
+        try{
+            ps = conec.getConnection().prepareStatement(sql);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                Productos vo = new Productos();
+                vo.setId(rs.getInt(1));
+                vo.setNombre(rs.getString(2));
+                vo.setTipo(rs.getString(3));
+                vo.setDescripcion(rs.getString(4));
+                vo.setPrecio(rs.getInt(5));
+                vo.setCantidad(rs.getString(6));
+                vo.setImagen(rs.getBytes(7));
+                //ps.setInt(8, vo.getIdV());  
+                list.add(vo);
+            }
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{
+                ps.close();
+                rs.close();
+            }catch(Exception ex){}
+        }
+        return list;
+    }
+    
+    public ArrayList<Productos> Listar_Artesanias(int id_V){
+        
+        
+        ArrayList<Productos> list = new ArrayList<Productos>();
+        ConexionBD conec = new ConexionBD();
+        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, stock, foto FROM `productos` WHERE `tipo`=\"Artesanía\" AND " +
+"id_V = " + id_V +";";
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        
+        try{
+            ps = conec.getConnection().prepareStatement(sql);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                Productos vo = new Productos();
+                vo.setId(rs.getInt(1));
+                vo.setNombre(rs.getString(2));
+                vo.setTipo(rs.getString(3));
+                vo.setDescripcion(rs.getString(4));
+                vo.setPrecio(rs.getInt(5));
+                vo.setCantidad(rs.getString(6));
+                vo.setImagen(rs.getBytes(7));
+                list.add(vo);
+            }
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{
+                ps.close();
+                rs.close();
+            }catch(Exception ex){}
+        }
+        return list;
+    }
+    
+    public ArrayList<Productos> Listar_Accesorios(int id_V){
+        
+        
+        ArrayList<Productos> list = new ArrayList<Productos>();
+        ConexionBD conec = new ConexionBD();
+        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, stock, foto FROM `productos` WHERE `tipo`=\"Accesorio\" AND " +
+"id_V = " + id_V +";";
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        
+        try{
+            ps = conec.getConnection().prepareStatement(sql);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                Productos vo = new Productos();
+                vo.setId(rs.getInt(1));
+                vo.setNombre(rs.getString(2));
+                vo.setTipo(rs.getString(3));
+                vo.setDescripcion(rs.getString(4));
+                vo.setPrecio(rs.getInt(5));
+                vo.setCantidad(rs.getString(6));
+                vo.setImagen(rs.getBytes(7));
+                list.add(vo);
+            }
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{
+                ps.close();
+                rs.close();
+            }catch(Exception ex){}
+        }
+        return list;
+    }
+    
+    public ArrayList<Productos> Listar_Comida(int id_V){
+        
+        
+        ArrayList<Productos> list = new ArrayList<Productos>();
+        ConexionBD conec = new ConexionBD();
+        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, stock, foto FROM `productos` WHERE `tipo`=\"Comida\" AND " +
+"id_V = " + id_V +";";
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        
+        try{
+            ps = conec.getConnection().prepareStatement(sql);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                Productos vo = new Productos();
+                vo.setId(rs.getInt(1));
+                vo.setNombre(rs.getString(2));
+                vo.setTipo(rs.getString(3));
+                vo.setDescripcion(rs.getString(4));
+                vo.setPrecio(rs.getInt(5));
+                vo.setCantidad(rs.getString(6));
+                vo.setImagen(rs.getBytes(7));
+                list.add(vo);
+            }
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{
+                ps.close();
+                rs.close();
+            }catch(Exception ex){}
+        }
+        return list;
+    }
+    
+    public ArrayList<Productos> Listar_Bebidas(int id_V){
+        
+        
+        ArrayList<Productos> list = new ArrayList<Productos>();
+        ConexionBD conec = new ConexionBD();
+        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, stock, foto FROM `productos` WHERE `tipo`=\"Bebida\" AND " +
+"id_V = " + id_V +";";
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        
+        try{
+            ps = conec.getConnection().prepareStatement(sql);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                Productos vo = new Productos();
+                vo.setId(rs.getInt(1));
+                vo.setNombre(rs.getString(2));
+                vo.setTipo(rs.getString(3));
+                vo.setDescripcion(rs.getString(4));
+                vo.setPrecio(rs.getInt(5));
+                vo.setCantidad(rs.getString(6));
+                vo.setImagen(rs.getBytes(7));
+                list.add(vo);
+            }
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{
+                ps.close();
+                rs.close();
+            }catch(Exception ex){}
+        }
+        return list;
+    }
+    
     public void Modificar_ProductoVO2(modelo.VisualizarProducto.Productos vo){
         ConexionBD conec = new ConexionBD();
         String sql = "UPDATE productos SET nombre = ?, tipo = ?, descripcion = ?, precio = ?, stock = ?\n" +
@@ -233,9 +420,9 @@ public class ProductoDAO {
         }
     }
     
-    public void Modificar_ProductoVO(modelo.VisualizarProducto.Productos vo){
+   public void Modificar_ProductoVO(modelo.VisualizarProducto.Productos vo){
         ConexionBD conec = new ConexionBD();
-        String sql = "UPDATE productos SET nombre = ?, tipo = ?, descripcion = ?, precio = ?, stock = ?, foto = ?\n" +
+        String sql = "UPDATE productos SET foto = ?\n" +
 "WHERE id_P = ?;";
         PreparedStatement ps = null;
  
@@ -245,13 +432,8 @@ public class ProductoDAO {
             
             if (input == 0){
                 ps = conec.getConnection().prepareStatement(sql);
-            ps.setString(1, vo.getNombre());
-            ps.setString(2, vo.getTipo());
-            ps.setString(3, vo.getDescripcion());
-            ps.setInt(4, vo.getPrecio());
-            ps.setString(5, vo.getCantidad());
-            ps.setBytes(6, vo.getImagen());
-            ps.setInt(7, vo.getId());
+            ps.setBytes(1, vo.getImagen());
+            ps.setInt(2, vo.getId());
             ps.executeUpdate();
             System.out.println(input);
             JOptionPane.showMessageDialog(null, "La imagen ha sido modificada", "Operación exitosa ", JOptionPane.INFORMATION_MESSAGE);

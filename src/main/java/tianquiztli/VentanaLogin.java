@@ -242,7 +242,7 @@ public class VentanaLogin extends javax.swing.JFrame {
                 
                 if(rs.next()){
                     id = rs.getInt("id_V");
-                    VisualizarProductosVendedor vpv = new VisualizarProductosVendedor();
+                    VisualizarProductosVendedor vpv = new VisualizarProductosVendedor(id);
                     
                     vpv.l_user.setText(usuario);
                     vpv.l_id.setText(String.valueOf(id));

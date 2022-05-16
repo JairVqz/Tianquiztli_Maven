@@ -6,11 +6,15 @@ package vista.Productos;
 
 import controlador.Productos.ControladorPantallaEditarProductos;
 import controlador.Productos.ControladorPantallaRegistrarProductos;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import javax.swing.JFileChooser;
 import javax.swing.WindowConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import modelo.Productos.Producto_DAO;
 import modelo.VisualizarProducto.ProductoDAO;
+import modelo.VisualizarProducto.Productos;
 
 /**
  *
@@ -340,6 +344,7 @@ public class PantallaEditarProductos extends javax.swing.JFrame {
             String ruta = j.getSelectedFile().getAbsolutePath();
             txtRuta.setText(ruta);
         }
+        cprp.recibirDatos2();
     }//GEN-LAST:event_btnAgregarFotoActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
@@ -376,7 +381,23 @@ public class PantallaEditarProductos extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+    
+     public void modificar(File foto, int id){
+        Productos vo = new Productos();
+        producto_dao = new ProductoDAO();
 
+        vo.setId(id);
+        
+        try{
+            byte[] icono = new byte[(int) foto.length()];
+            InputStream input = new FileInputStream(foto);
+            input.read(icono);
+            vo.setImagen(icono);
+        }catch(Exception ex){
+            vo.setImagen(null);
+        }
+        producto_dao.Modificar_ProductoVO(vo);
+    }
     /**
      * @param args the command line arguments
      */

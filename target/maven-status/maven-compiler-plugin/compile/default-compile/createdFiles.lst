@@ -13,7 +13,9 @@ controlador\Productos\ControladorP_Comprador$1.class
 vista\Productos\PantallaEditarProductos.class
 vista\Productos\PantallaEditarProductos$8.class
 vista\Productos\PantallaRegistrarProductos$9.class
+controlador\Productos\ControladorP$8.class
 tianquiztli\VentanaLogin.class
+modelo\Venta\Venta_DAO.class
 vista\Productos\VisualizarProductosVendedor$7.class
 vista\Productos\PantallaRegistrarProductos$3.class
 vista\Productos\VisualizarProductos$8.class
@@ -26,10 +28,9 @@ modelo\VisualizarProducto\ProductoDAO_Comprador.class
 vista\Productos\PantallaEditarProductos$2.class
 controlador\Productos\ControladorPantallaEditarProductos.class
 vista\Productos\VisualizarProductosVendedor$1.class
-controlador\Venta\ControladorPantallaCarrito.class
-modelo\Venta\Venta.class
 modelo\PedidoR\PedidoRDAO.class
 vista\RegistrarVendedorVista\RegistrarVendedor.class
+controlador\Productos\ControladorP$6.class
 vista\Productos\PantallaRegistrarProductos$1.class
 tianquiztli\VentanaLogin$1.class
 vista\Productos\PantallaRegistrarProductos$7.class
@@ -37,7 +38,6 @@ controlador\RegistrarCompradorControlador\CompradorControlador.class
 vista\Productos\PantallaEditarProductos$6.class
 vista\Productos\VisualizarProductosVendedor$11.class
 vista\Productos\VisualizarProductos$5.class
-.netbeans_automatic_build
 modelo\PedidoR\Render.class
 modelo\PedidoR\PedidoR.class
 vista\Productos\VisualizarProductosVendedor$2.class
@@ -48,6 +48,7 @@ vista\Productos\PantallaRegistrarProductos$8.class
 vista\Productos\VisualizarProductos.class
 modelo\RegistrarVendedorModelo\Conexion.class
 vista\Productos\PantallaRegistrarProductos$10.class
+controlador\Productos\ControladorP$10.class
 vista\Productos\VisualizarProductosVendedor$8.class
 vista\Productos\PantallaEditarProductos$7.class
 vista\RegistrarVendedorVista\RegistrarVendedor$1.class
@@ -62,6 +63,7 @@ vista\Productos\VisualizarProductosVendedor$9.class
 vista\RegistrarVendedorVista\Conexion.class
 tianquiztli\Conexion.class
 vista\Productos\VisualizarProductos$1.class
+controlador\Productos\ControladorP$7.class
 vista\Productos\PantallaRegistrarProductos.class
 vista\Repartidor\VisualizarPedidoR$2.class
 controlador\Productos\ControladorP$4.class
@@ -96,8 +98,10 @@ vista\RegistrarCompradorVista\RegistrarComprador$2.class
 controlador\PedidoR\TablaPedidoR.class
 vista\Productos\VisualizarProductosVendedor$5.class
 controlador\Productos\ControladorP$2.class
+vista\Productos\PantallaCarrito$3.class
 modelo\RegistrarCompradorModelo\Comprador.class
 modelo\RegistrarCompradorModelo\CompradorDAO.class
+controlador\Productos\ControladorP$9.class
 modelo\VisualizarProducto\ProductoDAO.class
 controlador\Productos\ControladorP_Comprador.class
 vista\Productos\VisualizarProductos$9.class

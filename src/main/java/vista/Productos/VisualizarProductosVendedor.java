@@ -25,6 +25,7 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
@@ -51,6 +52,21 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         this.logoImagen(this.logo, "src/main/java/Imagenes/logo.png");   
         t.visualizar_ProductoVO(tabla);    
     }
+    
+    public VisualizarProductosVendedor(int id) {
+        initComponents();
+        this.setLocationRelativeTo(this);
+        this.logoImagen(this.logo, "src/main/java/Imagenes/logo.png"); 
+        l_id.setText(String.valueOf(id));
+        int idV = Integer.parseInt(l_id.getText());
+        System.out.println("HOLISSS  " + id + "   " + Integer.parseInt(l_id.getText()));
+        
+        t.visualizar_ProductoVO(tabla,idV);  
+        
+       
+        //t.visualizar_ProductoVO(tabla);
+    }
+    
     
     public void limpiar(){
         tf1_id.setText("");
@@ -442,19 +458,23 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
     }//GEN-LAST:event_b1ActionPerformed
 
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
-        t.vBebida(tabla);
+        int idV = Integer.parseInt(l_id.getText());
+        t.vBebida(tabla,idV);
     }//GEN-LAST:event_b5ActionPerformed
 
     private void b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b4ActionPerformed
-        t.vComida(tabla);
+         int idV = Integer.parseInt(l_id.getText());
+        t.vComida(tabla,idV);
     }//GEN-LAST:event_b4ActionPerformed
 
     private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
-        t.vAccesorio(tabla);
+        int idV = Integer.parseInt(l_id.getText());
+        t.vAccesorio(tabla,idV);
     }//GEN-LAST:event_b3ActionPerformed
 
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
-        t.vArtesania(tabla);
+        int idV = Integer.parseInt(l_id.getText());
+        t.vArtesania(tabla,idV);
     }//GEN-LAST:event_b2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -527,8 +547,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
-                    t.visualizar_ProductoVO(tabla);
+        int idV = Integer.parseInt(l_id.getText());
         /*int id = Integer.parseInt(tf1_id.getText());
         String nombre = tf2_nombre.getText();
         String tipo = tf3_tipo.getText();
@@ -575,7 +594,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         public void windowClosing(WindowEvent e) {
             //Hacer lo que yo quiero
             System.out.println("Estoy cerrando");
-            t.visualizar_ProductoVO(tabla);
+            t.visualizar_ProductoVO(tabla,idV);
         }
  });
           /* this.recibirDatos();
@@ -591,10 +610,13 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
             this.eliminar(id);
             limpiar();
         }
-        t.visualizar_ProductoVO(tabla);
+        int idV = Integer.parseInt(l_id.getText());
+        t.visualizar_ProductoVO(tabla,idV); 
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int idV = Integer.parseInt(l_id.getText());
+        t.visualizar_ProductoVO(tabla,idV); 
         PantallaRegistrarProductos pantallaRegistro = new PantallaRegistrarProductos();
         Producto_DAO producto_dao = new Producto_DAO();
         ControladorPantallaRegistrarProductos rpc = new ControladorPantallaRegistrarProductos(producto_dao, pantallaRegistro);
@@ -602,6 +624,18 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         pantallaRegistro.setTitle("Tianquiztli");
         pantallaRegistro.setLocationRelativeTo(null);
         pantallaRegistro.setVisible(true);
+        
+        pantallaRegistro.addWindowListener(new WindowAdapter() {
+        @Override
+        public void windowClosing(WindowEvent e) {
+            //Hacer lo que yo quiero
+            System.out.println("Estoy cerrando");
+            t.visualizar_ProductoVO(tabla,idV);
+        }
+ });
+        
+         
+        
         //Método agregar
     }//GEN-LAST:event_jButton2ActionPerformed
 
