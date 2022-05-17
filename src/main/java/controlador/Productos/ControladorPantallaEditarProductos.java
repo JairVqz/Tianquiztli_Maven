@@ -42,12 +42,13 @@ public class ControladorPantallaEditarProductos {
        // this.vpvc=vpvc;
     }
 
-    public ControladorPantallaEditarProductos(ProductoDAO producto_dao, PantallaEditarProductos pantallaEditar,int id, String nombre, String tipo, String descripcion, int precio, String cantidad) {
+    public ControladorPantallaEditarProductos(ProductoDAO producto_dao, PantallaEditarProductos pantallaEditar,int id, String nombre, String tipo, String descripcion, int precio, int cantidad, String stock) {
         //pantallaEditar.txtId_V = id.getText();
       System.out.println("Hola" + nombre + tipo + descripcion);
       pantallaEditar.txtId.setText(String.valueOf(id));
       pantallaEditar.txtNombre.setText(nombre);
       pantallaEditar.txtPrecio.setText(String.valueOf(precio));
+      pantallaEditar.txtCantidad2.setText(String.valueOf(cantidad));
       pantallaEditar.txtDescripcion.setText(descripcion);
       pantallaEditar.stockProducto.setSelectedItem(cantidad);
       pantallaEditar.tipoProducto.setSelectedItem(tipo);
@@ -65,9 +66,10 @@ public class ControladorPantallaEditarProductos {
             int precio = Integer.parseInt(pantallaEditar.txtPrecio.getText());
             String stock = (String) pantallaEditar.stockProducto.getSelectedItem();
             File ruta = new File (pantallaEditar.txtRuta.getText());
+            int cantidad = Integer.parseInt(pantallaEditar.txtCantidad2.getText());
         
             //this.agregarProducto( nombre, tipo, descripcion, precio, stock, ruta);
-            this.modificar2(nombre, tipo, descripcion, precio, id, stock);
+            this.modificar2(nombre, tipo, descripcion, precio, id, cantidad, stock);
         }
     }
     
@@ -86,7 +88,7 @@ public class ControladorPantallaEditarProductos {
         }
     }
     
-    public void modificar2(String nombre, String tipo, String descripcion, int precio, int id, String cantidad){
+    public void modificar2(String nombre, String tipo, String descripcion, int precio, int id, int cantidad, String stock){
         Productos vo = new Productos();
         dao = new ProductoDAO();
         
@@ -95,6 +97,7 @@ public class ControladorPantallaEditarProductos {
         vo.setDescripcion(descripcion);
         vo.setPrecio(precio);
         vo.setId(id);
+        vo.setStock(stock);
         vo.setCantidad(cantidad);
         
         dao.Modificar_ProductoVO2(vo);
@@ -145,7 +148,7 @@ public class ControladorPantallaEditarProductos {
     
     private boolean campoVacioPrecio(){
         String errorMessage = "";
-        if(pantallaEditar.txtPrecio.getText().trim().isEmpty()){
+        if(pantallaEditar.txtCantidad2.getText().trim().isEmpty()){
             JOptionPane.showMessageDialog(null, "El campo precio está vacío, verifica el campo", "Error", JOptionPane.WARNING_MESSAGE);
         }
                 
@@ -158,7 +161,7 @@ public class ControladorPantallaEditarProductos {
     
     private boolean campoNumericoPrecio(){
         boolean numero = false;
-        String precio = pantallaEditar.txtPrecio.getText();
+        String precio = pantallaEditar.txtCantidad2.getText();
         for(int i = 0;i<precio.length();i++){
             if(precio.charAt(i) == '1' || precio.charAt(i) == '2'|| precio.charAt(i) == '3' ||
                     precio.charAt(i) == '4' || precio.charAt(i) == '5' || precio.charAt(i) == '6' ||

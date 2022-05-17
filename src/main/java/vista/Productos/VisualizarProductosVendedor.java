@@ -76,6 +76,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         ta1.setText("");
         txtfoto.setText("");
         tf5_cantidad.setText("");
+        tf6_cantidad.setText("");
         codigo = 0;
         t.visualizar_ProductoVO(tabla);
     }
@@ -115,6 +116,8 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         tf4_precio = new javax.swing.JLabel();
         tf5_cantidad = new javax.swing.JLabel();
         txtfoto = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        tf6_cantidad = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         b2 = new javax.swing.JButton();
         b3 = new javax.swing.JButton();
@@ -196,6 +199,8 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("CANTIDAD:");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -217,19 +222,26 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cantidad)
                                     .addComponent(costo)
-                                    .addComponent(txtfoto)))
+                                    .addComponent(txtfoto)
+                                    .addComponent(jLabel1)))
                             .addComponent(tf2_nombre)))
                     .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(descripcion)
                         .addGap(7, 7, 7)
                         .addComponent(ta1)))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tf4_precio)
+                            .addComponent(tf5_cantidad)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tf6_cantidad))))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tf4_precio)
-                    .addComponent(tf5_cantidad)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING))
-                .addGap(32, 32, 32)
                 .addComponent(producto, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -238,7 +250,9 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(producto, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(producto, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(id)
@@ -255,13 +269,19 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tf3_tipo)
                             .addComponent(tipo)
-                            .addComponent(jButton1)
-                            .addComponent(txtfoto))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(descripcion)
-                            .addComponent(ta1))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(txtfoto)
+                            .addComponent(jLabel1)
+                            .addComponent(tf6_cantidad))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(descripcion)
+                                    .addComponent(ta1)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1)
+                                .addGap(24, 24, 24))))))
         );
 
         b2.setFont(new java.awt.Font("Heiti TC", 0, 14)); // NOI18N
@@ -494,11 +514,11 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         //String tipo = (String) pantallaRegistro.tipoProducto.getSelectedItem();
         String descripcion = ta1.getText();
         int precio = Integer.parseInt(tf4_precio.getText());
-        
-        String cantidad = tf5_cantidad.getText();
+        int cantidad = Integer.parseInt(tf6_cantidad.getText());
+        String stock = tf5_cantidad.getText();
         File ruta = new File(txtfoto.getText());
 
-        this.modificar(nombre, tipo,descripcion,precio ,ruta,id,cantidad);
+        this.modificar(nombre, tipo,descripcion,precio ,ruta,id,cantidad,stock);
         t.visualizar_ProductoVO(tabla);
         limpiar();
         /*if(txtfoto==null){
@@ -527,6 +547,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         ta1.setText(tabla.getValueAt(filaSeleccionada, 3).toString());
         tf4_precio.setText(tabla.getValueAt(filaSeleccionada, 4).toString());
         tf5_cantidad.setText(tabla.getValueAt(filaSeleccionada, 5).toString());
+        tf6_cantidad.setText(tabla.getValueAt(filaSeleccionada, 7).toString());
         //tf5_cantidad.setText(tabla.getValueAt(filaSeleccionada, 5).toString());
         //txtfoto.setText(tabla.getValueAt(filaSeleccionada, 6).toString());
 
@@ -547,7 +568,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        int idV = Integer.parseInt(l_id.getText());
+        final int idV = Integer.parseInt(l_id.getText());
         /*int id = Integer.parseInt(tf1_id.getText());
         String nombre = tf2_nombre.getText();
         String tipo = tf3_tipo.getText();
@@ -578,13 +599,14 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         String tipo = (String) tf3_tipo.getText();
         String descripcion = ta1.getText();
         int precio = Integer.parseInt(tf4_precio.getText());
-        String cantidad = (String) tf5_cantidad.getText();
+        String stock = (String) tf5_cantidad.getText();
+        int cantidad = Integer.parseInt(tf6_cantidad.getText());
         
         PantallaEditarProductos pantallaEditar = new PantallaEditarProductos();
         ProductoDAO producto_dao = new ProductoDAO();
         ControladorP vpv = new ControladorP();
         //ControladorPantallaEditarProductos rpc = new ControladorPantallaEditarProductos(producto_dao, pantallaEditar);
-        ControladorPantallaEditarProductos rpcr = new ControladorPantallaEditarProductos(producto_dao, pantallaEditar,id,nombre,tipo,descripcion,precio,cantidad);
+        ControladorPantallaEditarProductos rpcr = new ControladorPantallaEditarProductos(producto_dao, pantallaEditar,id,nombre,tipo,descripcion,precio,cantidad, stock);
         //
         pantallaEditar.setTitle("Tianquiztli");
         pantallaEditar.setLocationRelativeTo(null);
@@ -625,14 +647,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         pantallaRegistro.setLocationRelativeTo(null);
         pantallaRegistro.setVisible(true);
         
-        pantallaRegistro.addWindowListener(new WindowAdapter() {
-        @Override
-        public void windowClosing(WindowEvent e) {
-            //Hacer lo que yo quiero
-            System.out.println("Estoy cerrando");
-            t.visualizar_ProductoVO(tabla,idV);
-        }
- });
+    
         
          
         
@@ -662,7 +677,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
     }
     
     
-    public void modificar(String nombre, String tipo, String descripcion, int precio, File foto, int id, String cantidad){
+   public void modificar(String nombre, String tipo, String descripcion, int precio, File foto, int id, int cantidad, String stock){
         Productos vo = new Productos();
         dao = new ProductoDAO();
         
@@ -671,6 +686,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         vo.setDescripcion(descripcion);
         vo.setPrecio(precio);
         vo.setId(id);
+        vo.setStock(stock);
         vo.setCantidad(cantidad);
         
         try{
@@ -693,7 +709,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         dao.Eliminar_ProductoVO(vo);
     }
     
-    public void modificar2(String nombre, String tipo, String descripcion, int precio, int id, String cantidad){
+    public void modificar2(String nombre, String tipo, String descripcion, int precio, int id, String stock, int cantidad){
         Productos vo = new Productos();
         dao = new ProductoDAO();
         
@@ -702,6 +718,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         vo.setDescripcion(descripcion);
         vo.setPrecio(precio);
         vo.setId(id);
+        vo.setStock(stock);
         vo.setCantidad(cantidad);
         
         dao.Modificar_ProductoVO2(vo);
@@ -712,7 +729,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
     
     
     
-    public void recibirDatos(){
+    /*public void recibirDatos(){
         Productos producto = new Productos();
         System.out.println("No Entró if");
         if(campoVacioId_V() && campoVacioNombre() && campoVacioDescripcion()  && campoVacioPrecio() && campoNumericoValidoPrecio() ){
@@ -723,11 +740,12 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
         String descripcion = ta1.getText();
         int precio = Integer.parseInt(tf4_precio.getText());
         String cantidad = (String) tf5_cantidad.getText();
+        int cantidad  =Integer.parseInt(tf1_cantidad.getText());
             //File ruta = new File (vpv.txtRuta.getText());
             //this.agregarProducto(id_V, nombre, tipo, descripcion, precio, stock, ruta);
-            this.modificar2(nombre, tipo,descripcion,precio ,id,cantidad);
+            this.modificar2(nombre, tipo,descripcion,precio ,id,stock, cantidad);
         }
-    }
+    }*/
     
     private boolean campoVacioId_V(){
         String errorMessage = "";
@@ -847,6 +865,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -866,6 +885,7 @@ public class VisualizarProductosVendedor extends javax.swing.JFrame {
     private javax.swing.JLabel tf3_tipo;
     private javax.swing.JLabel tf4_precio;
     private javax.swing.JLabel tf5_cantidad;
+    private javax.swing.JLabel tf6_cantidad;
     private javax.swing.JLabel tipo;
     private javax.swing.JLabel txtfoto;
     // End of variables declaration//GEN-END:variables

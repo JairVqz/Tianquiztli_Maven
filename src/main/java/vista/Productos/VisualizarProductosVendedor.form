@@ -254,6 +254,7 @@
                                               <Component id="cantidad" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="costo" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="txtfoto" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Component id="tf2_nombre" min="-2" max="-2" attributes="0"/>
@@ -266,13 +267,23 @@
                                   <Component id="ta1" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="tf4_precio" min="-2" max="-2" attributes="0"/>
-                              <Component id="tf5_cantidad" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="tf4_precio" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf5_cantidad" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jButton1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf6_cantidad" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="producto" min="-2" pref="180" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -283,8 +294,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="producto" min="-2" pref="149" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="producto" min="-2" pref="149" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="id" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="costo" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -302,17 +316,26 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="tf3_tipo" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="tipo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtfoto" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="tf6_cantidad" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="descripcion" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ta1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="descripcion" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="ta1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -399,6 +422,13 @@
                 <Component class="javax.swing.JLabel" name="tf5_cantidad">
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtfoto">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="CANTIDAD:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="tf6_cantidad">
                 </Component>
               </SubComponents>
             </Container>

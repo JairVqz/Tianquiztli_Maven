@@ -46,21 +46,23 @@ public class ControladorP {
         dt.addColumn("PRECIO");
         dt.addColumn("STOCK");
         dt.addColumn("IMAGEN");
+        dt.addColumn("CANTIDAD");
 
         dao = new ProductoDAO();
         Productos vo = new Productos();
         ArrayList<Productos> list = dao.Listar_ProductoVO();  //Aqui elegimos la tabla
 
-        if(list.size() > 0){
+       if(list.size() > 0){
             for(int i=0; i<list.size(); i++){
-                Object fila[] = new Object[7];
+                Object fila[] = new Object[8];
                 vo = list.get(i);
                 fila[0] = vo.getId();
                 fila[1] = vo.getNombre();
                 fila[2] = vo.getTipo();
                 fila[3] = vo.getDescripcion();
                 fila[4] = vo.getPrecio();
-                fila[5] = vo.getCantidad();
+                fila[5] = vo.getStock();  
+                fila[7] = vo.getCantidad();
                 try{
                     byte[] bi = vo.getImagen();
                     BufferedImage img = null;
@@ -94,6 +96,8 @@ public class ControladorP {
         dt.addColumn("PRECIO");
         dt.addColumn("STOCK");
         dt.addColumn("IMAGEN");
+        dt.addColumn("CANTIDAD");
+        
         
         
         System.out.println();
@@ -108,14 +112,15 @@ public class ControladorP {
 
         if(list.size() > 0){
             for(int i=0; i<list.size(); i++){
-                Object fila[] = new Object[7];
+                Object fila[] = new Object[8];
                 vo = list.get(i);
                 fila[0] = vo.getId();
                 fila[1] = vo.getNombre();
                 fila[2] = vo.getTipo();
                 fila[3] = vo.getDescripcion();
                 fila[4] = vo.getPrecio();
-                fila[5] = vo.getCantidad();
+                fila[5] = vo.getStock();    
+                fila[7] = vo.getCantidad();
                 try{
                     byte[] bi = vo.getImagen();
                     BufferedImage img = null;
@@ -128,6 +133,7 @@ public class ControladorP {
                     fila[6] = new JLabel("No hay imagen");
                 }
                 dt.addRow(fila);
+                
             }
             tabla.setModel(dt);
             tabla.setRowHeight(60);
@@ -152,6 +158,7 @@ public class ControladorP {
         dt.addColumn("PRECIO");
         dt.addColumn("STOCK");
         dt.addColumn("IMAGEN");
+        dt.addColumn("CANTIDAD");
 
         dao = new ProductoDAO();
         Productos vo = new Productos();
@@ -166,7 +173,9 @@ public class ControladorP {
                 fila[2] = vo.getTipo();
                 fila[3] = vo.getDescripcion();
                 fila[4] = vo.getPrecio();
-                fila[5] = vo.getCantidad();
+                fila[5] = vo.getStock();
+                fila[7] = vo.getCantidad();
+                
                 try{
                     byte[] bi = vo.getImagen();
                     BufferedImage image = null;

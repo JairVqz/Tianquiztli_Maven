@@ -64,6 +64,7 @@ vista\RegistrarVendedorVista\Conexion.class
 tianquiztli\Conexion.class
 vista\Productos\VisualizarProductos$1.class
 controlador\Productos\ControladorP$7.class
+vista\Productos\PantallaEditarProductos$10.class
 vista\Productos\PantallaRegistrarProductos.class
 vista\Repartidor\VisualizarPedidoR$2.class
 controlador\Productos\ControladorP$4.class

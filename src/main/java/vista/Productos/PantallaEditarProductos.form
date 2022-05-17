@@ -111,25 +111,21 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel10" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
-                                  <Component id="jLabel5" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
-                                  <Component id="jLabel7" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
-                                  <Component id="jLabel8" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
-                                  <Component id="jLabel9" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
-                                  <Component id="jLabel11" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="idtxt" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="txtId" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jLabel5" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
+                          <Component id="jLabel8" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
+                          <Component id="jLabel9" alignment="0" min="-2" pref="72" max="-2" attributes="0"/>
+                          <Component id="jLabel11" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="jLabel10" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
+                          <Component id="jLabel12" min="-2" pref="118" max="-2" attributes="0"/>
+                          <Component id="jLabel7" min="-2" pref="54" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
@@ -142,7 +138,6 @@
                                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="txtNombre" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtPrecio" alignment="0" max="32767" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="btnAgregarFoto" min="-2" pref="92" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
@@ -155,6 +150,8 @@
                                               <Component id="btnGuardar" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtPrecio" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="txtCantidad2" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -167,7 +164,7 @@
                                       <Component id="tipoProducto" min="-2" pref="175" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="200" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="241" max="-2" attributes="0"/>
                                       <Component id="stockProducto" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -198,53 +195,45 @@
                               <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Component id="txtNombre" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                                      <Component id="tipoProducto" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Component id="txtPrecio" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="stockProducto" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="txtNombre" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                              <Component id="txtRuta" min="-2" pref="33" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                              <Component id="btnAgregarFoto" min="-2" pref="54" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="tipoProducto" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="txtPrecio" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                              <Component id="stockProducto" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                              <Component id="txtCantidad2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="txtRuta" min="-2" pref="33" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="btnAgregarFoto" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
+                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                           </Group>
@@ -297,7 +286,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="20" style="3"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Stock"/>
+                <Property name="text" type="java.lang.String" value="Cantidad"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
@@ -366,9 +355,9 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtPrecio">
+            <Component class="javax.swing.JTextField" name="txtCantidad2">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPrecioActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCantidad2ActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -481,6 +470,22 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="jLabel4"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel12">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="20" style="3"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Stock"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtPrecio">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPrecioActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>

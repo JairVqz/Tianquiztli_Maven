@@ -18,7 +18,7 @@ public class ProductoDAO {
         
         ArrayList<Productos> list = new ArrayList<Productos>();
         ConexionBD conec = new ConexionBD();
-        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, stock, foto FROM `productos`;";
+        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, stock, foto,cantidad FROM `productos`;";
         ResultSet rs = null;
         PreparedStatement ps = null;
         
@@ -32,8 +32,9 @@ public class ProductoDAO {
                 vo.setTipo(rs.getString(3));
                 vo.setDescripcion(rs.getString(4));
                 vo.setPrecio(rs.getInt(5));
-                vo.setCantidad(rs.getString(6));
+                vo.setStock(rs.getString(6));
                 vo.setImagen(rs.getBytes(7));
+                vo.setCantidad(rs.getInt(8));
                 list.add(vo);
             }
         }catch(SQLException ex){
@@ -54,7 +55,7 @@ public class ProductoDAO {
         
         ArrayList<Productos> list = new ArrayList<Productos>();
         ConexionBD conec = new ConexionBD();
-        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, stock, foto FROM `productos` WHERE `tipo`=\"Artesanía\"";
+        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, stock, foto,cantidad FROM `productos` WHERE `tipo`=\"Artesanía\"";
         ResultSet rs = null;
         PreparedStatement ps = null;
         
@@ -68,8 +69,10 @@ public class ProductoDAO {
                 vo.setTipo(rs.getString(3));
                 vo.setDescripcion(rs.getString(4));
                 vo.setPrecio(rs.getInt(5));
-                vo.setCantidad(rs.getString(6));
+                vo.setStock(rs.getString(6));
+            
                 vo.setImagen(rs.getBytes(7));
+                vo.setCantidad(rs.getInt(8));
                 list.add(vo);
             }
         }catch(SQLException ex){
@@ -104,8 +107,10 @@ public class ProductoDAO {
                 vo.setTipo(rs.getString(3));
                 vo.setDescripcion(rs.getString(4));
                 vo.setPrecio(rs.getInt(5));
-                vo.setCantidad(rs.getString(6));
+                vo.setStock(rs.getString(6));
+            
                 vo.setImagen(rs.getBytes(7));
+                vo.setCantidad(rs.getInt(8));
                 list.add(vo);
             }
         }catch(SQLException ex){
@@ -140,8 +145,10 @@ public class ProductoDAO {
                 vo.setTipo(rs.getString(3));
                 vo.setDescripcion(rs.getString(4));
                 vo.setPrecio(rs.getInt(5));
-                vo.setCantidad(rs.getString(6));
+                vo.setStock(rs.getString(6));
+            
                 vo.setImagen(rs.getBytes(7));
+                vo.setCantidad(rs.getInt(8));
                 list.add(vo);
             }
         }catch(SQLException ex){
@@ -176,8 +183,9 @@ public class ProductoDAO {
                 vo.setTipo(rs.getString(3));
                 vo.setDescripcion(rs.getString(4));
                 vo.setPrecio(rs.getInt(5));
-                vo.setCantidad(rs.getString(6));
+                vo.setStock(rs.getString(6));
                 vo.setImagen(rs.getBytes(7));
+                vo.setCantidad(rs.getInt(8));
                 list.add(vo);
             }
         }catch(SQLException ex){
@@ -199,7 +207,7 @@ public class ProductoDAO {
         
         ArrayList<Productos> list = new ArrayList<Productos>();
         ConexionBD conec = new ConexionBD();
-        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, stock, foto FROM `productos`" +
+        String sql = "SELECT id_P, nombre, tipo, descripcion, precio, stock, foto,cantidad FROM `productos`" +
 "WHERE id_V = " + id_V +";";  
         ResultSet rs = null;
         PreparedStatement ps = null;
@@ -214,9 +222,9 @@ public class ProductoDAO {
                 vo.setTipo(rs.getString(3));
                 vo.setDescripcion(rs.getString(4));
                 vo.setPrecio(rs.getInt(5));
-                vo.setCantidad(rs.getString(6));
+                vo.setStock(rs.getString(6));
                 vo.setImagen(rs.getBytes(7));
-                //ps.setInt(8, vo.getIdV());  
+                vo.setCantidad(rs.getInt(8));
                 list.add(vo);
             }
         }catch(SQLException ex){
@@ -252,8 +260,10 @@ public class ProductoDAO {
                 vo.setTipo(rs.getString(3));
                 vo.setDescripcion(rs.getString(4));
                 vo.setPrecio(rs.getInt(5));
-                vo.setCantidad(rs.getString(6));
+                vo.setStock(rs.getString(6));
+            
                 vo.setImagen(rs.getBytes(7));
+                vo.setCantidad(rs.getInt(8));
                 list.add(vo);
             }
         }catch(SQLException ex){
@@ -289,8 +299,10 @@ public class ProductoDAO {
                 vo.setTipo(rs.getString(3));
                 vo.setDescripcion(rs.getString(4));
                 vo.setPrecio(rs.getInt(5));
-                vo.setCantidad(rs.getString(6));
+                vo.setStock(rs.getString(6));
+            
                 vo.setImagen(rs.getBytes(7));
+                vo.setCantidad(rs.getInt(8));
                 list.add(vo);
             }
         }catch(SQLException ex){
@@ -326,8 +338,10 @@ public class ProductoDAO {
                 vo.setTipo(rs.getString(3));
                 vo.setDescripcion(rs.getString(4));
                 vo.setPrecio(rs.getInt(5));
-                vo.setCantidad(rs.getString(6));
+                vo.setStock(rs.getString(6));
+            
                 vo.setImagen(rs.getBytes(7));
+                vo.setCantidad(rs.getInt(8));
                 list.add(vo);
             }
         }catch(SQLException ex){
@@ -363,8 +377,10 @@ public class ProductoDAO {
                 vo.setTipo(rs.getString(3));
                 vo.setDescripcion(rs.getString(4));
                 vo.setPrecio(rs.getInt(5));
-                vo.setCantidad(rs.getString(6));
+                vo.setStock(rs.getString(6));
+            
                 vo.setImagen(rs.getBytes(7));
+                vo.setCantidad(rs.getInt(8));
                 list.add(vo);
             }
         }catch(SQLException ex){
@@ -382,7 +398,7 @@ public class ProductoDAO {
     
     public void Modificar_ProductoVO2(modelo.VisualizarProducto.Productos vo){
         ConexionBD conec = new ConexionBD();
-        String sql = "UPDATE productos SET nombre = ?, tipo = ?, descripcion = ?, precio = ?, stock = ?\n" +
+        String sql = "UPDATE productos SET nombre = ?, tipo = ?, descripcion = ?, precio = ?, stock = ?, cantidad = ?\n" +
 "WHERE id_P = ?;";
         PreparedStatement ps = null;
         try{
@@ -395,8 +411,9 @@ public class ProductoDAO {
             ps.setString(2, vo.getTipo());
             ps.setString(3, vo.getDescripcion());
             ps.setInt(4, vo.getPrecio());
-            ps.setString(5, vo.getCantidad());
-            ps.setInt(6, vo.getId());
+            ps.setString(5, vo.getStock());
+            ps.setInt(6, vo.getCantidad());
+            ps.setInt(7, vo.getId());
             ps.executeUpdate();
            JOptionPane.showMessageDialog(null, "El Producto ha sido modificado", "Operación exitosa ", JOptionPane.INFORMATION_MESSAGE);
             }else{
