@@ -38,6 +38,7 @@ controlador\RegistrarCompradorControlador\CompradorControlador.class
 vista\Productos\PantallaEditarProductos$6.class
 vista\Productos\VisualizarProductosVendedor$11.class
 vista\Productos\VisualizarProductos$5.class
+.netbeans_automatic_build
 modelo\PedidoR\Render.class
 modelo\PedidoR\PedidoR.class
 vista\Productos\VisualizarProductosVendedor$2.class
@@ -47,7 +48,6 @@ vista\Productos\VisualizarProductosVendedor$12.class
 vista\Productos\PantallaRegistrarProductos$8.class
 vista\Productos\VisualizarProductos.class
 modelo\RegistrarVendedorModelo\Conexion.class
-vista\Productos\PantallaRegistrarProductos$10.class
 controlador\Productos\ControladorP$10.class
 vista\Productos\VisualizarProductosVendedor$8.class
 vista\Productos\PantallaEditarProductos$7.class

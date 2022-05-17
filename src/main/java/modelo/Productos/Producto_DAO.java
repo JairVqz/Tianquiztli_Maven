@@ -13,8 +13,8 @@ public class Producto_DAO{
 
     public void agregarProducto(Producto producto) {
         ConexionBD c = new ConexionBD();
-        String sql = "INSERT INTO productos (id_P, id_V, nombre, tipo, descripcion, precio, stock, foto)\n" +
-"VALUES (NULL,?,?,?,?,?,?,?);";
+        String sql = "INSERT INTO productos (id_P, id_V, nombre, tipo, descripcion, precio, stock, foto, cantidad)\n" +
+"VALUES (NULL,?,?,?,?,?,?,?,?);";
         PreparedStatement ps = null;
         try{
             ps = c.getConnection().prepareStatement(sql);
@@ -25,6 +25,7 @@ public class Producto_DAO{
             ps.setInt(5, producto.getPrecio());
             ps.setString(6, producto.getStock());
             ps.setBytes(7, producto.getFoto());
+            ps.setInt(8, producto.getCantidad());
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null, "El Producto ha sido registrado", "Operación exitosa ", JOptionPane.INFORMATION_MESSAGE);
         }catch(SQLException ex){

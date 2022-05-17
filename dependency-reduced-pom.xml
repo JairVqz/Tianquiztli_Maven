@@ -28,10 +28,10 @@
     </plugins>
   </build>
   <properties>
-    <maven.compiler.target>1.8</maven.compiler.target>
     <exec.mainClass>tianquiztli.Tianquiztli</exec.mainClass>
     <maven.compiler.source>1.8</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 </project>
 

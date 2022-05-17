@@ -29,20 +29,21 @@ public class ControladorPantallaRegistrarProductos{
     public void recibirDatos(){
         Producto producto = new Producto();
         
-        if(campoVacioId_V() && campoVacioNombre() && campoVacioDescripcion() && campoVacioPrecio() && campoNumericoValidoPrecio() &&campoVacioRuta()){
+        if(campoVacioId_V() && campoVacioNombre() && campoVacioDescripcion() && campoVacioPrecio() && campoNumericoValidoPrecio() && campoVacioCantidad() &&campoVacioRuta()){
             int id_V = Integer.parseInt(pantallaRegistro.txtId_V.getText());
             String nombre = pantallaRegistro.txtNombre.getText();
             String tipo = (String) pantallaRegistro.tipoProducto.getSelectedItem();
             String descripcion = pantallaRegistro.txtDescripcion.getText();
             int precio = Integer.parseInt(pantallaRegistro.txtPrecio.getText());
             String stock = (String) pantallaRegistro.stockProducto.getSelectedItem();
+            int cantidad = Integer.parseInt(pantallaRegistro.txtCantidad.getText());
             File ruta = new File (pantallaRegistro.txtRuta.getText());
         
-            this.agregarProducto(id_V, nombre, tipo, descripcion, precio, stock, ruta);
+            this.agregarProducto(id_V, nombre, tipo, descripcion, precio, stock, ruta, cantidad);
         }
     }
     
-     public void agregarProducto(int id_V, String nombre, String tipo, String descripcion, int precio, String stock, File ruta){
+     public void agregarProducto(int id_V, String nombre, String tipo, String descripcion, int precio, String stock, File ruta, int cantidad){
         Producto p = new Producto();
         Producto_DAO dao = new Producto_DAO();
         
@@ -52,6 +53,7 @@ public class ControladorPantallaRegistrarProductos{
         p.setDescripcion(descripcion);
         p.setPrecio(precio);
         p.setStock(stock);
+        p.setCantidad(cantidad);
         try{
             byte[] icono = new byte[(int) ruta.length()];
             InputStream input = new FileInputStream(ruta);
@@ -141,6 +143,19 @@ public class ControladorPantallaRegistrarProductos{
             return false;
         }
     } 
+    
+    private boolean campoVacioCantidad(){
+        String errorMessage = "";
+        if(pantallaRegistro.txtCantidad.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null, "El campo cantidad está vacío, verifica el campo", "Error", JOptionPane.WARNING_MESSAGE);
+        }
+                
+        if(errorMessage.length() == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
     
     private boolean campoVacioRuta(){
         String errorMessage = "";

@@ -44,7 +44,8 @@ public class VisualizarProductos extends javax.swing.JFrame {
         this.logoImagen(this.logo, "src/main/java/Imagenes/logo.png");
         this.logoImagen(this.titulo, "src/main/java/Imagenes/titulo.png");
         
-        
+        this.l_idComprador.setVisible(false);
+        this.l_direccionComprador.setVisible(false);
         
         //t.visualizar_ProductoVO(tabla);
         tc.visualizar_ProductoCompradorVO(tabla);
@@ -492,8 +493,8 @@ public class VisualizarProductos extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         
-        if(this.tf1_id.getText().isEmpty() && this.tf2_nombre.getText().isEmpty() && this.ta1.getText().isEmpty() && this.tf4_precio.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Ha ocurrido un error, primero debes seleccionar un producto", "Error", JOptionPane.ERROR_MESSAGE);
+        if(this.tf2_nombre.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error, verifica que hayas seleccionado un producto y que este este disponible en stock", "Error", JOptionPane.ERROR_MESSAGE);
         }else{
             pc.lb_idv.setText(this.tf1_id.getText());
             pc.lb_nombre.setText(this.tf2_nombre.getText());

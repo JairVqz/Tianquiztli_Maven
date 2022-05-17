@@ -88,7 +88,7 @@ public class Venta_DAO {
             ps.setString(6, productos);
             ps.setInt(7, totalCompra);
             ps.executeUpdate();
-            //JOptionPane.showMessageDialog(null, "La compra ha sido registrada", "Operación exitosa ", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "La compra ha sido registrada", "Operación exitosa ", JOptionPane.INFORMATION_MESSAGE);
         }catch(SQLException ex){
             System.out.println("A "+ex.getMessage());
         }catch(Exception ex){
