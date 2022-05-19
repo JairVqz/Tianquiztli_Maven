@@ -253,22 +253,24 @@ public class VentanaLogin extends javax.swing.JFrame {
                vpv.setLocationRelativeTo(null);
 
                 }else{
-                   JOptionPane.showMessageDialog(null,"Datos incorrectos");  
+                    ps=con.prepareStatement("select * from repartidor where nombreR='"+usuario+"' and contraseñaR='"+contraseña+"'");
+                    rs=ps.executeQuery();
+                    if(rs.next()){
+                        idR = rs.getInt("id_R");
+                        VisualizarPedidoR vpr = new VisualizarPedidoR(idR);
+                        
+                        vpr.l_repartidor.setText(usuario);
+                        //vpr.l_idRepartidor.setText(String.valueOf(idR));
+                        
+                        TablaPedidoR tp = new TablaPedidoR(vpr);
+                        this.setVisible(false);
+                        vpr.setVisible(true);
+                        vpr.setLocationRelativeTo(null);
+                    }else{
+                        JOptionPane.showMessageDialog(null,"Datos incorrectos");  
+                    }
+                   
                 }
-            }
-                ps=con.prepareStatement("select * from repartidor where nombreR='"+usuario+"' and contraseñaR='"+contraseña+"'");
-                rs=ps.executeQuery();
-            if(rs.next()){
-                idR = rs.getInt("id_R");
-                VisualizarPedidoR vpr = new VisualizarPedidoR();
-                
-                vpr.l_repartidor.setText(usuario);
-                vpr.l_idRepartidor.setText(String.valueOf(idR));
-               
-               TablaPedidoR tp = new TablaPedidoR(vpr);
-               this.setVisible(false);
-               vpr.setVisible(true);
-               vpr.setLocationRelativeTo(null);
             }
             
         } catch (Exception ex) {

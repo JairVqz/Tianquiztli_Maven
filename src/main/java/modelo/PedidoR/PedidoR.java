@@ -13,9 +13,11 @@ public class PedidoR {
     int idP;
     int idC;
     int idR;
+    String nombre;
     String estado;
     String direccion;
     String productos;
+    int total;
 
     public int getIdP() {
         return idP;
@@ -25,6 +27,10 @@ public class PedidoR {
     }
     public int getIdR() {
         return idR;
+    }
+    
+    public String getNombre() {
+        return nombre;
     }
 
     public String getEstado() {
@@ -38,7 +44,9 @@ public class PedidoR {
     public String getProductos() {
         return productos;
     }
-
+    public int getTotal() {
+        return total;
+    }
     public void setIdP(int idP) {
         this.idP = idP;
     }
@@ -48,6 +56,10 @@ public class PedidoR {
     
     public void setIdC(int idC) {
         this.idC = idC;
+    }
+    
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public void setEstado(String estado) {
@@ -60,6 +72,9 @@ public class PedidoR {
 
     public void setProductos(String productos) {
         this.productos = productos;
+    }
+    public void setTotal(int total) {
+        this.total = total;
     }
 
 }

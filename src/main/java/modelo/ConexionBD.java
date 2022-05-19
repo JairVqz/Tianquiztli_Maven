@@ -19,7 +19,7 @@ public class ConexionBD {
     // Nombre de la base de datos
     public String database = "tianquiztli";
     // Host
-    public String hostname = "localhost";
+    public String hostname = "192.168.64.2";
     // Puerto
     public String port = "3306";
     //Rura a nuestra base de datos
@@ -31,7 +31,7 @@ public class ConexionBD {
     public String password = "";
        
     public ConexionBD() {
-        this.hostname = "localhost";
+        this.hostname = "192.168.64.2";
         this.port = "3306";
         this.database = "tianquiztli";
         this.username = "root";
